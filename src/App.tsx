@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollProgress from "./components/ScrollProgress";
 import FloatingButtons from "./components/FloatingButtons";
+import { ThemeProvider } from "./hooks/use-theme";
 import { useEffect } from "react";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -61,22 +62,24 @@ function AnimatedRoutes() {
 }
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <ScrollProgress />
-        <Header />
-        <main>
-          <AnimatedRoutes />
-        </main>
-        <Footer />
-        <FloatingButtons />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <ScrollProgress />
+          <Header />
+          <main>
+            <AnimatedRoutes />
+          </main>
+          <Footer />
+          <FloatingButtons />
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </ThemeProvider>
 );
 
 export default App;
