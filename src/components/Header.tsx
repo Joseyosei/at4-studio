@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -67,11 +68,12 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA + Mobile Toggle */}
-          <div className="flex items-center gap-4">
+          {/* CTA + Theme + Mobile Toggle */}
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
             <Link
               to="/contact"
-              className="hidden md:inline-flex font-body text-sm border border-gold text-gold px-5 py-2 rounded-sm hover:bg-gold hover:text-primary-foreground transition-all duration-300"
+              className="hidden md:inline-flex font-body text-sm border border-primary text-primary px-5 py-2 rounded-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
               Get In Touch
             </Link>
