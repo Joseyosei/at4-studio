@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import { Building2, Layers, Zap, Droplets, ClipboardList, Map, ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
+import imgMinistryRoads from "@/assets/projects/ministry-roads.png";
+import imgDigitalAerial from "@/assets/projects/accra-digital-centre-aerial.jpg";
+import imgDigitalStreet from "@/assets/projects/accra-digital-centre-street.jpg";
+import imgUmat1 from "@/assets/projects/umat-1.jpg";
+import imgUmat2 from "@/assets/projects/umat-2.jpeg";
+import imgUmat4 from "@/assets/projects/umat-4.png";
+
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
@@ -29,12 +36,12 @@ const stats = [
 ];
 
 const projects = [
-  { name: "Labone Heights Residential Complex", loc: "Accra", cat: "Architecture", grad: "from-amber-900/40 to-stone-900" },
-  { name: "Wa Municipal Council Offices", loc: "Upper West Region", cat: "Architecture", grad: "from-yellow-900/30 to-neutral-900" },
-  { name: "Kumasi Industrial Warehouse", loc: "Ashanti", cat: "Structural Engineering", grad: "from-orange-900/30 to-zinc-900" },
-  { name: "Accra Metropolitan Authority HQ", loc: "Accra", cat: "Architecture & MEP", grad: "from-rose-900/20 to-stone-900" },
-  { name: "Tema Water Treatment Plant", loc: "Greater Accra", cat: "Hydro Engineering", grad: "from-teal-900/30 to-neutral-900" },
-  { name: "GIMPA University Extension Block", loc: "Accra", cat: "Architecture", grad: "from-amber-800/30 to-zinc-900" },
+  { name: "Ministry of Roads & Highways Office Building", loc: "Accra", cat: "Architecture", img: imgMinistryRoads },
+  { name: "Accra Digital Centre — Aerial View", loc: "Greater Accra", cat: "Architecture", img: imgDigitalAerial },
+  { name: "Accra Digital Centre — Street View", loc: "Greater Accra", cat: "Architecture", img: imgDigitalStreet },
+  { name: "University of Mines & Technology — Main Block", loc: "Tarkwa", cat: "Architecture", img: imgUmat1 },
+  { name: "University of Mines & Technology — Academic Wing", loc: "Tarkwa", cat: "Architecture", img: imgUmat2 },
+  { name: "University of Mines & Technology — Campus Overview", loc: "Tarkwa", cat: "Architecture", img: imgUmat4 },
 ];
 
 function AnimatedCounter({ target, suffix }: { target: number; suffix: string }) {
@@ -84,8 +91,7 @@ const Home = () => {
     <>
       {/* HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* BG layers */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] via-[#1A1205] to-[#111111]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] via-[#0A1628] to-[#111111]" />
         <div className="absolute inset-0 blueprint-grid opacity-[0.04]" />
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
           <span className="font-display text-[30vw] font-bold text-gold opacity-[0.03] leading-none">AT4</span>
@@ -93,50 +99,24 @@ const Home = () => {
 
         <div className="relative container mx-auto px-6 pt-32 pb-40">
           <div className="max-w-3xl">
-            <motion.p
-              custom={0}
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              className="section-label"
-            >
+            <motion.p custom={0} variants={fadeUp} initial="hidden" animate="visible" className="section-label">
               EST. 1993 — ACCRA, GHANA 🇬🇭
             </motion.p>
-            <motion.h1
-              custom={1}
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              className="font-display text-5xl sm:text-6xl lg:text-[80px] font-light text-cream leading-[1.08] mt-4"
-            >
+            <motion.h1 custom={1} variants={fadeUp} initial="hidden" animate="visible"
+              className="font-display text-5xl sm:text-6xl lg:text-[80px] font-light text-cream leading-[1.08] mt-4">
               Engineering Ghana's Built Environment
             </motion.h1>
-            <motion.p
-              custom={2}
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              className="font-body text-lg text-slate-custom max-w-xl mt-6 leading-relaxed"
-            >
+            <motion.p custom={2} variants={fadeUp} initial="hidden" animate="visible"
+              className="font-body text-lg text-slate-custom max-w-xl mt-6 leading-relaxed">
               A multidisciplinary consortium of Architects, Engineers and Planners delivering world-class AEC consultancy services across Ghana since 1993.
             </motion.p>
-            <motion.div
-              custom={3}
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              className="flex flex-wrap gap-4 mt-10"
-            >
-              <Link
-                to="/projects"
-                className="inline-flex items-center gap-2 font-body text-sm bg-gold text-primary-foreground px-7 py-3 rounded-sm hover:bg-gold-light transition-colors"
-              >
+            <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="flex flex-wrap gap-4 mt-10">
+              <Link to="/projects"
+                className="inline-flex items-center gap-2 font-body text-sm bg-gold text-primary-foreground px-7 py-3 rounded-sm hover:bg-gold-light transition-colors">
                 Explore Our Work <ArrowRight size={16} />
               </Link>
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-2 font-body text-sm border border-cream/30 text-cream px-7 py-3 rounded-sm hover:border-cream hover:bg-cream/5 transition-colors"
-              >
+              <Link to="/services"
+                className="inline-flex items-center gap-2 font-body text-sm border border-cream/30 text-cream px-7 py-3 rounded-sm hover:border-cream hover:bg-cream/5 transition-colors">
                 Our Services <ArrowRight size={16} />
               </Link>
             </motion.div>
@@ -147,19 +127,11 @@ const Home = () => {
         <div className="absolute bottom-0 left-0 right-0 bg-charcoal-mid border-t border-gold/20">
           <div className="container mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((s, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 + i * 0.1 }}
-                className="text-center"
-              >
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 + i * 0.1 }} className="text-center">
                 <div className="font-display text-4xl md:text-5xl text-gold font-semibold">
                   <AnimatedCounter target={s.num} suffix={s.suffix} />
                 </div>
-                <p className="font-body text-[11px] uppercase tracking-[0.15em] text-slate-custom mt-2">
-                  {s.label}
-                </p>
+                <p className="font-body text-[11px] uppercase tracking-[0.15em] text-slate-custom mt-2">{s.label}</p>
               </motion.div>
             ))}
           </div>
@@ -169,40 +141,18 @@ const Home = () => {
       {/* SERVICES OVERVIEW */}
       <section className="section-padding bg-background blueprint-grid">
         <div className="container mx-auto px-6">
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="section-label"
-          >
-            WHAT WE DO
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="section-heading mb-16"
-          >
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="section-label">WHAT WE DO</motion.p>
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="section-heading mb-16">
             Six Disciplines, One Trusted Consultancy
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                whileHover={{ scale: 1.02 }}
-                className="group bg-charcoal-mid p-8 rounded-sm border border-transparent hover:border-gold/40 transition-all duration-300"
-              >
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} whileHover={{ scale: 1.02 }}
+                className="group bg-charcoal-mid p-8 rounded-sm border border-transparent hover:border-gold/40 transition-all duration-300">
                 <s.icon className="text-gold mb-4" size={28} />
                 <h3 className="font-display text-[22px] text-cream mb-2">{s.name}</h3>
                 <p className="font-body text-sm text-slate-custom leading-relaxed">{s.desc}</p>
-                <Link
-                  to="/services"
-                  className="inline-block mt-4 font-body text-sm text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                >
+                <Link to="/services" className="inline-block mt-4 font-body text-sm text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   Learn more →
                 </Link>
               </motion.div>
@@ -215,29 +165,17 @@ const Home = () => {
       <section className="section-padding bg-charcoal">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <p className="section-label">ABOUT AT4</p>
               <h2 className="section-heading mb-6">Three Decades of Building Excellence in Ghana</h2>
               <p className="font-body text-slate-custom leading-relaxed mb-8">
                 Founded in 1993, Arch-Team 4 Consultancy has grown from a small team of passionate technicians into one of Ghana's most respected multidisciplinary AEC consultancies. Our corporate members of the Ghana Institute of Engineers bring unmatched depth across six disciplines.
               </p>
-              <Link
-                to="/about"
-                className="inline-flex items-center gap-2 font-body text-sm border border-gold text-gold px-6 py-3 rounded-sm hover:bg-gold hover:text-primary-foreground transition-colors"
-              >
+              <Link to="/about" className="inline-flex items-center gap-2 font-body text-sm border border-gold text-gold px-6 py-3 rounded-sm hover:bg-gold hover:text-primary-foreground transition-colors">
                 Learn Our Story <ArrowRight size={16} />
               </Link>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="flex flex-col gap-6"
-            >
+            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="flex flex-col gap-6">
               <div className="bg-charcoal-mid p-8 rounded-sm border-l-2 border-gold">
                 <h4 className="font-display text-lg text-gold mb-2">Our Mission</h4>
                 <p className="font-body text-sm text-slate-custom leading-relaxed">
@@ -258,34 +196,15 @@ const Home = () => {
       {/* FEATURED PROJECTS */}
       <section className="section-padding bg-background">
         <div className="container mx-auto px-6">
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="section-label"
-          >
-            SELECTED WORKS
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="section-heading mb-16"
-          >
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="section-label">SELECTED WORKS</motion.p>
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="section-heading mb-16">
             Projects That Define Ghana's Landscape
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((p, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                whileHover={{ scale: 1.02 }}
-                className="group relative aspect-[4/5] rounded-sm overflow-hidden cursor-pointer"
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${p.grad}`} />
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} whileHover={{ scale: 1.02 }}
+                className="group relative aspect-[4/5] rounded-sm overflow-hidden cursor-pointer">
+                <img src={p.img} alt={p.name} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                   <span className="font-body text-[10px] uppercase tracking-[0.15em] text-gold">{p.cat}</span>
@@ -296,10 +215,7 @@ const Home = () => {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Link
-              to="/projects"
-              className="inline-flex items-center gap-2 font-body text-sm bg-gold text-primary-foreground px-7 py-3 rounded-sm hover:bg-gold-light transition-colors"
-            >
+            <Link to="/projects" className="inline-flex items-center gap-2 font-body text-sm bg-gold text-primary-foreground px-7 py-3 rounded-sm hover:bg-gold-light transition-colors">
               View All Projects <ArrowRight size={16} />
             </Link>
           </div>
@@ -312,12 +228,8 @@ const Home = () => {
           <span className="font-display text-[120px] md:text-[200px] text-gold opacity-[0.06] leading-none select-none">"</span>
         </div>
         <div className="container mx-auto px-6 text-center relative">
-          <motion.blockquote
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="font-display text-2xl md:text-4xl italic text-cream max-w-4xl mx-auto leading-relaxed"
-          >
+          <motion.blockquote initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+            className="font-display text-2xl md:text-4xl italic text-cream max-w-4xl mx-auto leading-relaxed">
             "AT4's reputation for professionalism is the result of a conscientious and consistent policy to identify and maintain links with staff of the highest professional competence."
           </motion.blockquote>
           <p className="font-body text-sm text-slate-custom mt-8">— Arch-Team 4 Consultancy, Company Charter</p>
@@ -333,10 +245,7 @@ const Home = () => {
           <p className="font-body text-lg text-primary-foreground/80 mb-8">
             From concept to completion — let AT4's expert team guide you.
           </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 font-body text-sm bg-background text-cream px-8 py-3 rounded-sm hover:bg-charcoal-mid transition-colors"
-          >
+          <Link to="/contact" className="inline-flex items-center gap-2 font-body text-sm bg-background text-cream px-8 py-3 rounded-sm hover:bg-charcoal-mid transition-colors">
             Contact Us Today <ArrowRight size={16} />
           </Link>
         </div>
