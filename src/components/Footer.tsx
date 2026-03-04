@@ -76,7 +76,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-primary/10 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="font-body text-xs text-slate-custom">
-            © 2025 Arch-Team 4 Consultancy. All Rights Reserved. 🇬🇭
+            © 2026 Arch-Team 4 Consultancy. All Rights Reserved. 🇬🇭
           </p>
           <p className="font-body text-xs text-slate-custom">
             Registered in Ghana
