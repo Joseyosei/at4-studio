@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import AT4Logo from "@/assets/AT4_Logo.png";
 
 const Footer = () => {
   return (
@@ -7,7 +8,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Col 1 - Logo */}
           <div>
-            <span className="font-display text-3xl font-bold text-gold">AT4</span>
+            <div className="flex items-center gap-3">
+              <img src={AT4Logo} alt="AT4 Logo" className="h-12 w-12 rounded-full" />
+              <span className="font-display text-3xl font-bold text-gold">AT4</span>
+            </div>
             <p className="font-body text-sm text-slate-custom mt-3 leading-relaxed">
               Building Ghana's Future Since 1993 🇬🇭
             </p>
