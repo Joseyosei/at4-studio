@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
+import AT4Logo from "@/assets/AT4_Logo.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -38,13 +39,16 @@ const Header = () => {
       >
         <div className="container mx-auto flex items-center justify-between px-6 py-4">
           {/* Logo */}
-          <Link to="/" className="flex flex-col" aria-label="AT4 Home">
-            <span className="font-display text-[28px] font-bold text-gold leading-none">
-              AT4
-            </span>
-            <span className="font-body text-[9px] uppercase tracking-[0.2em] text-slate-custom leading-tight mt-0.5">
-              Arch-Team 4 Consultancy
-            </span>
+          <Link to="/" className="flex items-center gap-3" aria-label="AT4 Home">
+            <img src={AT4Logo} alt="AT4 Logo" className="h-10 w-10 rounded-full" />
+            <div className="flex flex-col">
+              <span className="font-display text-[22px] font-bold text-gold leading-none">
+                AT4
+              </span>
+              <span className="font-body text-[8px] uppercase tracking-[0.2em] text-slate-custom leading-tight mt-0.5">
+                Arch-Team 4 Consultancy
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
