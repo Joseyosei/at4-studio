@@ -1,47 +1,41 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Building2, Layers, Zap, Droplets, ClipboardList, Map, ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-import imgMinistryRoads from "@/assets/projects/ministry-roads.png";
-import imgDigitalAerial from "@/assets/projects/accra-digital-centre-aerial.jpg";
-import imgDigitalStreet from "@/assets/projects/accra-digital-centre-street.jpg";
-import imgUmat1 from "@/assets/projects/umat-1.jpg";
-import imgUmat2 from "@/assets/projects/umat-2.jpeg";
-import imgUmat4 from "@/assets/projects/umat-4.png";
+import imgDigitalFront from "@/assets/projects/accra-digital-centre-front.jpg";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.12, duration: 0.6, ease: "easeOut" as const },
+    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" as const },
   }),
 };
-
-const services = [
-  { icon: Building2, name: "Architecture & Planning", desc: "Residential, commercial, industrial and institutional design" },
-  { icon: Layers, name: "Structural Engineering", desc: "Civil & structural design for all building typologies" },
-  { icon: Zap, name: "Electrical Engineering", desc: "Full electrical systems design and project oversight" },
-  { icon: Droplets, name: "Hydro/Water Engineering", desc: "Water systems and wastewater treatment plant engineering" },
-  { icon: ClipboardList, name: "Project Management", desc: "End-to-end cost consultancy and project coordination" },
-  { icon: Map, name: "Geodetic Engineering", desc: "Land surveying, mapping and geodetic services" },
-];
 
 const stats = [
   { num: 30, suffix: "+", label: "Years of Excellence" },
   { num: 500, suffix: "+", label: "Projects Completed" },
-  { num: 6, suffix: "", label: "Engineering Disciplines" },
-  { num: 2, suffix: "", label: "Offices Nationwide" },
+  { num: 6, suffix: "", label: "Disciplines" },
+  { num: 2, suffix: "", label: "Offices" },
 ];
 
 const projects = [
-  { name: "Ministry of Roads & Highways Office Building", loc: "Accra", cat: "Architecture", img: imgMinistryRoads },
-  { name: "Accra Digital Centre — Aerial View", loc: "Greater Accra", cat: "Architecture", img: imgDigitalAerial },
-  { name: "Accra Digital Centre — Street View", loc: "Greater Accra", cat: "Architecture", img: imgDigitalStreet },
-  { name: "University of Mines & Technology — Main Block", loc: "Tarkwa", cat: "Architecture", img: imgUmat1 },
-  { name: "University of Mines & Technology — Academic Wing", loc: "Tarkwa", cat: "Architecture", img: imgUmat2 },
-  { name: "University of Mines & Technology — Campus Overview", loc: "Tarkwa", cat: "Architecture", img: imgUmat4 },
+  { id: "accra-digital-centre", name: "Accra Digital Centre — Front Entrance", loc: "Greater Accra, Ghana", cat: "Architecture · Commercial", year: "2020" },
+  { id: "accra-digital-centre-entrance", name: "Accra Digital Centre — Building Entrance", loc: "Greater Accra, Ghana", cat: "Architecture · Commercial", year: "2020" },
+  { id: "umat-main", name: "University of Mines & Technology — Main Block", loc: "Tarkwa, Western Region", cat: "Architecture · Institutional", year: "2018" },
+  { id: "wa-municipal", name: "Wa Municipal Council Headquarters", loc: "Wa, Upper West", cat: "Architecture · Public Sector", year: "2015" },
+  { id: "kumasi-warehouse", name: "Kumasi Industrial Warehouse Facility", loc: "Ashanti Region", cat: "Structural Engineering", year: "2019" },
+  { id: "gimpa-extension", name: "Ghana Institute of Management Extension", loc: "Accra", cat: "Architecture · Institutional", year: "2021" },
+];
+
+const expertiseItems = [
+  { num: "01", name: "Architecture & Planning" },
+  { num: "02", name: "Structural Engineering" },
+  { num: "03", name: "Electrical Engineering" },
+  { num: "04", name: "Hydro/Water Engineering" },
+  { num: "05", name: "Project Management" },
+  { num: "06", name: "Geodetic Engineering" },
 ];
 
 function AnimatedCounter({ target, suffix }: { target: number; suffix: string }) {
@@ -75,179 +69,173 @@ function AnimatedCounter({ target, suffix }: { target: number; suffix: string })
     return () => obs.disconnect();
   }, [target]);
 
-  return (
-    <span ref={ref}>
-      {count}{suffix}
-    </span>
-  );
+  return <span ref={ref}>{count}{suffix}</span>;
 }
 
 const Home = () => {
   useEffect(() => {
-    document.title = "Arch-Team 4 Consultancy | Engineering Ghana's Built Environment";
+    document.title = "AT4 — Arch-Team 4 Consultancy";
   }, []);
 
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] via-[#0A1628] to-[#111111]" />
-        <div className="absolute inset-0 blueprint-grid opacity-[0.04]" />
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-          <span className="font-display text-[30vw] font-bold text-gold opacity-[0.03] leading-none">AT4</span>
-        </div>
-
-        <div className="relative container mx-auto px-6 pt-32 pb-40">
-          <div className="max-w-3xl">
-            <motion.p custom={0} variants={fadeUp} initial="hidden" animate="visible" className="section-label">
-              EST. 1993 — ACCRA, GHANA 🇬🇭
-            </motion.p>
-            <motion.h1 custom={1} variants={fadeUp} initial="hidden" animate="visible"
-              className="font-display text-5xl sm:text-6xl lg:text-[80px] font-light text-cream leading-[1.08] mt-4">
-              Engineering Ghana's Built Environment
-            </motion.h1>
-            <motion.p custom={2} variants={fadeUp} initial="hidden" animate="visible"
-              className="font-body text-lg text-slate-custom max-w-xl mt-6 leading-relaxed">
-              A multidisciplinary consortium of Architects, Engineers and Planners delivering world-class AEC consultancy services across Ghana since 1993.
-            </motion.p>
-            <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="flex flex-wrap gap-4 mt-10">
-              <Link to="/projects"
-                className="inline-flex items-center gap-2 font-body text-sm bg-gold text-primary-foreground px-7 py-3 rounded-sm hover:bg-gold-light transition-colors">
-                Explore Our Work <ArrowRight size={16} />
-              </Link>
-              <Link to="/services"
-                className="inline-flex items-center gap-2 font-body text-sm border border-cream/30 text-cream px-7 py-3 rounded-sm hover:border-cream hover:bg-cream/5 transition-colors">
-                Our Services <ArrowRight size={16} />
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Stats Bar */}
-        <div className="absolute bottom-0 left-0 right-0 bg-charcoal-mid border-t border-gold/20">
-          <div className="container mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((s, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 + i * 0.1 }} className="text-center">
-                <div className="font-display text-4xl md:text-5xl text-gold font-semibold">
-                  <AnimatedCounter target={s.num} suffix={s.suffix} />
-                </div>
-                <p className="font-body text-[11px] uppercase tracking-[0.15em] text-slate-custom mt-2">{s.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES OVERVIEW */}
-      <section className="section-padding bg-background blueprint-grid">
+      <section className="min-h-screen flex items-center bg-background pt-20">
         <div className="container mx-auto px-6">
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="section-label">WHAT WE DO</motion.p>
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="section-heading mb-16">
-            Six Disciplines, One Trusted Consultancy
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} whileHover={{ scale: 1.02 }}
-                className="group bg-charcoal-mid p-8 rounded-sm border border-transparent hover:border-gold/40 transition-all duration-300">
-                <s.icon className="text-gold mb-4" size={28} />
-                <h3 className="font-display text-[22px] text-cream mb-2">{s.name}</h3>
-                <p className="font-body text-sm text-slate-custom leading-relaxed">{s.desc}</p>
-                <Link to="/services" className="inline-block mt-4 font-body text-sm text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Learn more →
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left */}
+            <div className="lg:pl-4">
+              <motion.p custom={0} variants={fadeUp} initial="hidden" animate="visible"
+                className="font-body text-[10px] uppercase tracking-[0.3em] text-accent mb-8">
+                Arch-Team 4 Consultancy
+              </motion.p>
+              <motion.h1 custom={1} variants={fadeUp} initial="hidden" animate="visible"
+                className="font-display text-6xl sm:text-7xl lg:text-[80px] font-light text-foreground leading-[1.0] tracking-[-0.02em]">
+                Engineering<br />Ghana's Built<br />Environment
+              </motion.h1>
+              <motion.p custom={2} variants={fadeUp} initial="hidden" animate="visible"
+                className="font-body text-[17px] font-light text-muted-foreground max-w-sm mt-8 leading-[1.7]">
+                A consortium of architects, engineers and planners delivering world-class AEC consultancy across Ghana since 1993.
+              </motion.p>
+              <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="flex flex-wrap gap-6 mt-10">
+                <Link to="/projects"
+                  className="font-body text-[13px] text-foreground relative pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-foreground after:origin-left after:scale-x-100 hover:after:scale-x-0 after:transition-transform after:duration-300">
+                  View Projects →
+                </Link>
+                <Link to="/expertise"
+                  className="font-body text-[13px] text-accent relative pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-accent after:origin-left after:scale-x-100 hover:after:scale-x-0 after:transition-transform after:duration-300">
+                  Our Expertise →
                 </Link>
               </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
 
-      {/* ABOUT TEASER */}
-      <section className="section-padding bg-charcoal">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <p className="section-label">ABOUT AT4</p>
-              <h2 className="section-heading mb-6">Three Decades of Building Excellence in Ghana</h2>
-              <p className="font-body text-slate-custom leading-relaxed mb-8">
-                Founded in 1993, Arch-Team 4 Consultancy has grown from a small team of passionate technicians into one of Ghana's most respected multidisciplinary AEC consultancies. Our corporate members of the Ghana Institute of Engineers bring unmatched depth across six disciplines.
-              </p>
-              <Link to="/about" className="inline-flex items-center gap-2 font-body text-sm border border-gold text-gold px-6 py-3 rounded-sm hover:bg-gold hover:text-primary-foreground transition-colors">
-                Learn Our Story <ArrowRight size={16} />
-              </Link>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="flex flex-col gap-6">
-              <div className="bg-charcoal-mid p-8 rounded-sm border-l-2 border-gold">
-                <h4 className="font-display text-lg text-gold mb-2">Our Mission</h4>
-                <p className="font-body text-sm text-slate-custom leading-relaxed">
-                  To be our clients' most trusted provider of AEC services by consistently exceeding expectations.
-                </p>
-              </div>
-              <div className="bg-charcoal-mid p-8 rounded-sm border-l-2 border-gold">
-                <h4 className="font-display text-lg text-gold mb-2">Our Vision</h4>
-                <p className="font-body text-sm text-slate-custom leading-relaxed">
-                  To earn the privilege of being the general consultancy of choice, in an ethical manner.
-                </p>
-              </div>
+            {/* Right - Hero Image */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative aspect-[4/5] lg:aspect-[3/4] overflow-hidden"
+            >
+              <img src={imgDigitalFront} alt="Accra Digital Centre" className="w-full h-full object-cover" />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* FEATURED PROJECTS */}
+      {/* STATS BAR */}
+      <section className="bg-secondary border-t border-b border-border py-12">
+        <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4">
+          {stats.map((s, i) => (
+            <div key={i} className={`text-center py-4 ${i < 3 ? "md:border-r md:border-border" : ""}`}>
+              <div className="font-display text-[52px] font-light text-foreground leading-none">
+                <AnimatedCounter target={s.num} suffix={s.suffix} />
+              </div>
+              <p className="font-body text-[10px] uppercase tracking-[0.2em] text-accent mt-3">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FEATURED PROJECTS — F+P LIST STYLE */}
       <section className="section-padding bg-background">
         <div className="container mx-auto px-6">
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="section-label">SELECTED WORKS</motion.p>
-          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="section-heading mb-16">
-            Projects That Define Ghana's Landscape
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="section-label">
+            Selected Works
+          </motion.p>
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="font-display text-6xl md:text-[72px] font-light text-foreground leading-[1.1] mb-4">
+            Projects
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((p, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} whileHover={{ scale: 1.02 }}
-                className="group relative aspect-[4/5] rounded-sm overflow-hidden cursor-pointer">
-                <img src={p.img} alt={p.name} className="absolute inset-0 w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="font-body text-[10px] uppercase tracking-[0.15em] text-gold">{p.cat}</span>
-                  <h3 className="font-display text-xl text-cream mt-1">{p.name}</h3>
-                  <p className="font-body text-sm text-slate-custom mt-1">{p.loc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link to="/projects" className="inline-flex items-center gap-2 font-body text-sm bg-gold text-primary-foreground px-7 py-3 rounded-sm hover:bg-gold-light transition-colors">
-              View All Projects <ArrowRight size={16} />
+          <div className="h-px bg-border mb-2" />
+
+          {projects.map((p, i) => (
+            <Link to={`/projects/${p.id}`} key={i}
+              className="group grid grid-cols-[40px_1fr] md:grid-cols-[40px_1fr_200px_160px_80px] items-center py-5 border-b border-border hover:bg-secondary transition-colors duration-200 px-2">
+              <span className="font-body text-[11px] text-muted-foreground">{String(i + 1).padStart(3, "0")}</span>
+              <span className="font-display text-[22px] font-normal text-foreground group-hover:text-accent transition-colors duration-200">
+                {p.name}
+              </span>
+              <span className="hidden md:block font-body text-[13px] text-accent">{p.loc}</span>
+              <span className="hidden md:block font-body text-[13px] uppercase text-muted-foreground">{p.cat}</span>
+              <span className="hidden md:block font-body text-[13px] text-muted-foreground text-right group-hover:after:content-['→'] group-hover:after:ml-2">{p.year}</span>
+            </Link>
+          ))}
+
+          <div className="mt-8">
+            <Link to="/projects" className="font-body text-[13px] text-foreground hover:text-accent transition-colors">
+              View All Projects →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* TESTIMONIAL */}
-      <section className="section-padding bg-charcoal relative overflow-hidden">
-        <div className="absolute top-8 left-8 md:left-16">
-          <span className="font-display text-[120px] md:text-[200px] text-gold opacity-[0.06] leading-none select-none">"</span>
+      {/* EXPERTISE STRIP */}
+      <section className="py-16 bg-background border-t border-border">
+        <div className="container mx-auto px-6">
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="section-label">
+            Our Expertise
+          </motion.p>
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="font-display text-4xl md:text-5xl font-light text-foreground mb-10">
+            Six disciplines, one practice
+          </motion.h2>
+          <div className="flex flex-wrap md:flex-nowrap items-center gap-0">
+            {expertiseItems.map((e, i) => (
+              <div key={i} className={`flex items-center gap-3 py-3 px-4 ${i < expertiseItems.length - 1 ? "md:border-r md:border-border" : ""} flex-shrink-0`}>
+                <span className="font-body text-[11px] text-muted-foreground">{e.num}</span>
+                <span className="font-body text-[15px] text-foreground whitespace-nowrap">{e.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="container mx-auto px-6 text-center relative">
-          <motion.blockquote initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-            className="font-display text-2xl md:text-4xl italic text-cream max-w-4xl mx-auto leading-relaxed">
-            "AT4's reputation for professionalism is the result of a conscientious and consistent policy to identify and maintain links with staff of the highest professional competence."
+      </section>
+
+      {/* STUDIO STATEMENT */}
+      <section className="py-24 md:py-32 bg-foreground">
+        <div className="container mx-auto px-6 text-center">
+          <motion.blockquote
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="font-display text-3xl md:text-[52px] font-light italic text-primary-foreground max-w-[900px] mx-auto leading-[1.2]"
+          >
+            "We are our clients' most trusted provider of Architecture, Engineering and Construction services — built on three decades of delivering excellence across Ghana."
           </motion.blockquote>
-          <p className="font-body text-sm text-slate-custom mt-8">— Arch-Team 4 Consultancy, Company Charter</p>
+          <p className="font-body text-[12px] uppercase tracking-[0.2em] text-accent mt-8">
+            — Arch-Team 4 Consultancy, Est. 1993
+          </p>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gold">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="font-display text-4xl md:text-5xl font-semibold text-primary-foreground mb-4">
-            Ready to Start Your Project?
-          </h2>
-          <p className="font-body text-lg text-primary-foreground/80 mb-8">
-            From concept to completion — let AT4's expert team guide you.
-          </p>
-          <Link to="/contact" className="inline-flex items-center gap-2 font-body text-sm bg-background text-cream px-8 py-3 rounded-sm hover:bg-charcoal-mid transition-colors">
-            Contact Us Today <ArrowRight size={16} />
-          </Link>
+      <section className="section-padding bg-background">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            <div>
+              <h2 className="font-display text-5xl md:text-[64px] font-light text-foreground leading-[1.1]">
+                Start a Project
+              </h2>
+              <p className="font-body text-[16px] font-light text-muted-foreground mt-6 max-w-md leading-[1.8]">
+                From concept to completion — let AT4's expert team guide your next architectural or engineering project.
+              </p>
+              <Link to="/contact" className="inline-block font-body text-[13px] text-accent mt-6 hover:text-foreground transition-colors">
+                Contact Us →
+              </Link>
+            </div>
+            <div className="border-l border-border pl-8 md:pl-12 space-y-6">
+              <div>
+                <p className="font-body text-[11px] uppercase tracking-[0.2em] text-accent mb-2">Address</p>
+                <p className="font-body text-[14px] text-muted-foreground">H/No. 8B, Agbogba Road, Accra, Ghana</p>
+              </div>
+              <div>
+                <p className="font-body text-[11px] uppercase tracking-[0.2em] text-accent mb-2">Email</p>
+                <a href="mailto:info@archteam4.com" className="font-body text-[14px] text-foreground hover:text-accent transition-colors">
+                  info@archteam4.com
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>

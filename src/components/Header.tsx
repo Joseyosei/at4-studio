@@ -2,14 +2,12 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import ThemeToggle from "./ThemeToggle";
 import AT4Logo from "@/assets/AT4_Logo.png";
 
 const navLinks = [
-  { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
-  { label: "Services", path: "/services" },
   { label: "Projects", path: "/projects" },
+  { label: "Expertise", path: "/expertise" },
+  { label: "Studio", path: "/studio" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -31,21 +29,19 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-background/95 backdrop-blur-md border-b border-primary/10"
-            : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-50 bg-background transition-all duration-300 border-b ${
+          scrolled ? "border-foreground/10" : "border-border"
         }`}
       >
         <div className="container mx-auto flex items-center justify-between px-6 py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3" aria-label="AT4 Home">
-            <img src={AT4Logo} alt="AT4 Logo" className="h-10 w-10 rounded-full" />
+            <img src={AT4Logo} alt="AT4 Logo" className="h-9 w-9 rounded-full" />
             <div className="flex flex-col">
-              <span className="font-display text-[22px] font-bold text-gold leading-none">
+              <span className="font-display text-[22px] font-normal text-foreground leading-none">
                 AT4
               </span>
-              <span className="font-body text-[8px] uppercase tracking-[0.2em] text-slate-custom leading-tight mt-0.5">
+              <span className="font-body text-[9px] uppercase tracking-[0.25em] text-accent leading-tight mt-0.5">
                 Arch-Team 4 Consultancy
               </span>
             </div>
@@ -57,32 +53,27 @@ const Header = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative font-body text-sm tracking-wide transition-colors duration-200 pb-1 ${
-                  location.pathname === link.path
-                    ? "text-gold"
-                    : "text-cream/70 hover:text-cream"
-                } after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-gold after:origin-left after:transition-transform after:duration-300 ${
+                className={`relative font-body text-[13px] tracking-[0.05em] transition-colors duration-200 pb-1 text-foreground ${
                   location.pathname === link.path
                     ? "after:scale-x-100"
                     : "after:scale-x-0 hover:after:scale-x-100"
-                }`}
+                } after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-foreground after:origin-left after:transition-transform after:duration-300`}
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          {/* CTA + Theme + Mobile Toggle */}
-          <div className="flex items-center gap-3">
-            <ThemeToggle />
+          {/* CTA + Mobile Toggle */}
+          <div className="flex items-center gap-6">
             <Link
               to="/contact"
-              className="hidden md:inline-flex font-body text-sm border border-primary text-primary px-5 py-2 rounded-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              className="hidden md:inline-flex font-body text-[13px] text-foreground border-l border-border pl-6 hover:text-accent transition-colors duration-200"
             >
               Get In Touch
             </Link>
             <button
-              className="md:hidden text-cream"
+              className="md:hidden text-foreground"
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
@@ -99,10 +90,10 @@ const Header = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-background/98 backdrop-blur-sm flex flex-col items-center justify-center"
+            className="fixed inset-0 z-[60] bg-background flex flex-col items-center justify-center"
           >
             <button
-              className="absolute top-6 right-6 text-cream"
+              className="absolute top-6 right-6 text-foreground"
               onClick={() => setMobileOpen(false)}
               aria-label="Close menu"
             >
@@ -118,8 +109,8 @@ const Header = () => {
                 >
                   <Link
                     to={link.path}
-                    className={`font-display text-3xl ${
-                      location.pathname === link.path ? "text-gold" : "text-cream"
+                    className={`font-display text-[48px] font-light ${
+                      location.pathname === link.path ? "text-accent" : "text-foreground"
                     }`}
                   >
                     {link.label}
@@ -133,9 +124,9 @@ const Header = () => {
               >
                 <Link
                   to="/contact"
-                  className="font-body text-sm border border-gold text-gold px-8 py-3 rounded-sm mt-4 inline-block"
+                  className="font-body text-[13px] text-accent mt-4 inline-block"
                 >
-                  Get In Touch
+                  Get In Touch →
                 </Link>
               </motion.div>
             </nav>
