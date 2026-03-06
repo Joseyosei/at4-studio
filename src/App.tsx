@@ -7,15 +7,14 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import ScrollProgress from "./components/ScrollProgress";
 import FloatingButtons from "./components/FloatingButtons";
-import { ThemeProvider } from "./hooks/use-theme";
 import { useEffect } from "react";
 
 const Home = lazy(() => import("./pages/Home"));
-const About = lazy(() => import("./pages/About"));
-const Services = lazy(() => import("./pages/Services"));
+const Studio = lazy(() => import("./pages/Studio"));
+const Expertise = lazy(() => import("./pages/Expertise"));
 const Projects = lazy(() => import("./pages/Projects"));
+const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -43,15 +42,16 @@ function AnimatedRoutes() {
         <Suspense
           fallback={
             <div className="min-h-screen flex items-center justify-center bg-background">
-              <span className="font-display text-2xl text-gold animate-pulse">AT4</span>
+              <span className="font-display text-2xl text-foreground animate-pulse">AT4</span>
             </div>
           }
         >
           <Routes location={location}>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
+            <Route path="/studio" element={<Studio />} />
+            <Route path="/expertise" element={<Expertise />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:id" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
@@ -62,24 +62,21 @@ function AnimatedRoutes() {
 }
 
 const App = () => (
-  <ThemeProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <ScrollProgress />
-          <Header />
-          <main>
-            <AnimatedRoutes />
-          </main>
-          <Footer />
-          <FloatingButtons />
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </ThemeProvider>
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <ScrollToTop />
+        <Header />
+        <main>
+          <AnimatedRoutes />
+        </main>
+        <Footer />
+        <FloatingButtons />
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
 );
 
 export default App;

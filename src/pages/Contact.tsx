@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useEffect } from "react";
 
@@ -24,7 +23,7 @@ const Contact = () => {
   } = useForm<FormData>();
 
   useEffect(() => {
-    document.title = "Contact — Arch-Team 4 Consultancy";
+    document.title = "Contact — AT4";
   }, []);
 
   const onSubmit = (data: FormData) => {
@@ -34,99 +33,88 @@ const Contact = () => {
   };
 
   const inputClass =
-    "w-full bg-charcoal-mid border border-primary/10 rounded-sm px-4 py-3 font-body text-sm text-cream placeholder:text-slate-custom focus:outline-none focus:border-gold/50 transition-colors";
-  const errorClass = "font-body text-xs text-gold mt-1";
+    "w-full border-0 border-b border-border bg-transparent px-0 py-3 font-body text-[14px] text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-colors";
+  const labelClass = "font-body text-[11px] uppercase tracking-[0.2em] text-accent mb-1.5 block";
+  const errorClass = "font-body text-xs text-destructive mt-1";
 
   return (
     <>
-      {/* HERO */}
-      <section className="relative min-h-[40vh] flex items-center blueprint-grid">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
-        <div className="relative container mx-auto px-6 pt-32 pb-16">
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="section-label">CONTACT</motion.p>
+      {/* PAGE HEADER */}
+      <section className="bg-background pt-32 pb-8">
+        <div className="container mx-auto px-6">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="font-display text-5xl md:text-6xl lg:text-7xl font-light text-cream leading-tight"
+            className="font-display text-7xl md:text-[96px] font-light text-foreground leading-none"
           >
-            Let's Build Together
+            Get in touch
           </motion.h1>
+          <div className="h-px bg-border mt-8" />
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
-      <section className="section-padding bg-charcoal">
-        <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* LEFT */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="section-heading mb-6">Start a Conversation</h2>
-            <p className="font-body text-slate-custom leading-relaxed mb-10">
-              Whether you have an ongoing project or are just beginning to plan, our team is ready to discuss how AT4 can add value.
-            </p>
-
-            <div className="space-y-8">
-              <div className="flex gap-4">
-                <MapPin className="text-gold shrink-0 mt-1" size={20} />
-                <div>
-                  <p className="font-body text-sm font-medium text-cream">Head Office</p>
-                  <p className="font-body text-sm text-slate-custom">H/No. 8B, Agbogba Road (Ritz Junction to Agbogba Junction), Accra, Ghana</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <MapPin className="text-gold shrink-0 mt-1" size={20} />
-                <div>
-                  <p className="font-body text-sm font-medium text-cream">Wa Office</p>
-                  <p className="font-body text-sm text-slate-custom">P.O. Box 7, Wa, Upper West Region, Ghana</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <Phone className="text-gold shrink-0 mt-1" size={20} />
-                <div className="font-body text-sm text-slate-custom">
-                  <p>+233-302-543080</p>
-                  <p>+233-208-150124</p>
-                  <p>+233-244-458706</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <Mail className="text-gold shrink-0 mt-1" size={20} />
-                <a href="mailto:info@archteam4.com" className="font-body text-sm text-cream hover:text-gold transition-colors">
-                  info@archteam4.com
-                </a>
-              </div>
-              <div className="flex gap-4">
-                <Clock className="text-gold shrink-0 mt-1" size={20} />
-                <p className="font-body text-sm text-slate-custom">Mon–Fri: 8:00am – 5:00pm GMT</p>
-              </div>
+      {/* INFO GRID */}
+      <section className="bg-background py-12">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+              <p className="font-body text-[10px] uppercase tracking-[0.2em] text-accent mb-3">Head Office</p>
+              <p className="font-body text-[14px] text-foreground leading-[1.7]">
+                H/No. 8B, Agbogba Road<br />
+                (Ritz Junction to Agbogba Junction)<br />
+                Accra, Ghana
+              </p>
+              <p className="font-body text-[14px] text-muted-foreground mt-3">
+                P.O. Box 7, Wa, Upper West Region
+              </p>
             </div>
-          </motion.div>
+            <div>
+              <p className="font-body text-[10px] uppercase tracking-[0.2em] text-accent mb-3">Phone & Email</p>
+              <div className="font-body text-[14px] text-foreground space-y-1">
+                <p>+233-302-543080</p>
+                <p>+233-208-150124</p>
+                <p>+233-244-458706</p>
+              </div>
+              <a href="mailto:info@archteam4.com" className="font-body text-[14px] text-foreground hover:text-accent transition-colors block mt-2">
+                info@archteam4.com
+              </a>
+            </div>
+            <div>
+              <p className="font-body text-[10px] uppercase tracking-[0.2em] text-accent mb-3">Office Hours</p>
+              <p className="font-body text-[14px] text-foreground">Mon–Fri: 8:00am – 5:00pm GMT</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          {/* RIGHT - FORM */}
+      {/* CONTACT FORM */}
+      <section className="section-padding bg-background">
+        <div className="container mx-auto px-6 max-w-2xl">
           <motion.form
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             onSubmit={handleSubmit(onSubmit)}
-            className="space-y-5"
+            className="space-y-8"
           >
             <div>
-              <input {...register("fullName", { required: "Full name is required" })} placeholder="Full Name *" className={inputClass} />
+              <label className={labelClass}>Full Name</label>
+              <input {...register("fullName", { required: "Full name is required" })} placeholder="Your full name" className={inputClass} />
               {errors.fullName && <p className={errorClass}>{errors.fullName.message}</p>}
             </div>
             <div>
-              <input {...register("email", { required: "Email is required", pattern: { value: /^\S+@\S+$/i, message: "Invalid email" } })} placeholder="Email Address *" type="email" className={inputClass} />
+              <label className={labelClass}>Email</label>
+              <input {...register("email", { required: "Email is required", pattern: { value: /^\S+@\S+$/i, message: "Invalid email" } })} placeholder="your@email.com" type="email" className={inputClass} />
               {errors.email && <p className={errorClass}>{errors.email.message}</p>}
             </div>
             <div>
-              <input {...register("phone")} placeholder="Phone Number" type="tel" className={inputClass} />
+              <label className={labelClass}>Phone</label>
+              <input {...register("phone")} placeholder="Phone number" type="tel" className={inputClass} />
             </div>
             <div>
+              <label className={labelClass}>Project Type</label>
               <select {...register("projectType", { required: "Select a project type" })} className={inputClass} defaultValue="">
-                <option value="" disabled>Project Type *</option>
+                <option value="" disabled>Select project type</option>
                 <option>Architecture & Planning</option>
                 <option>Structural Engineering</option>
                 <option>Electrical Engineering</option>
@@ -138,11 +126,13 @@ const Contact = () => {
               {errors.projectType && <p className={errorClass}>{errors.projectType.message}</p>}
             </div>
             <div>
-              <input {...register("projectLocation")} placeholder="Project Location" className={inputClass} />
+              <label className={labelClass}>Project Location</label>
+              <input {...register("projectLocation")} placeholder="Location" className={inputClass} />
             </div>
             <div>
+              <label className={labelClass}>Budget Range</label>
               <select {...register("budget")} className={inputClass} defaultValue="">
-                <option value="" disabled>Estimated Budget Range</option>
+                <option value="" disabled>Select budget range</option>
                 <option>Under GHS 100,000</option>
                 <option>GHS 100K–500K</option>
                 <option>GHS 500K–1M</option>
@@ -152,9 +142,10 @@ const Contact = () => {
               </select>
             </div>
             <div>
+              <label className={labelClass}>Project Description</label>
               <textarea
                 {...register("description", { required: "Please describe your project" })}
-                placeholder="Project Description *"
+                placeholder="Tell us about your project"
                 rows={4}
                 className={inputClass}
               />
@@ -162,7 +153,7 @@ const Contact = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-gold text-primary-foreground font-body text-sm py-3.5 rounded-sm hover:bg-gold-light transition-colors"
+              className="w-full bg-foreground text-primary-foreground font-body text-[13px] uppercase tracking-[0.1em] py-4 hover:bg-accent transition-colors duration-200"
             >
               Send Enquiry
             </button>
