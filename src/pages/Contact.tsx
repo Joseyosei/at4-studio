@@ -40,23 +40,23 @@ const Contact = () => {
   return (
     <>
       {/* PAGE HEADER */}
-      <section className="bg-background pt-32 pb-8">
-        <div className="container mx-auto px-6">
+      <section className="bg-background pt-24 sm:pt-32 pb-6 sm:pb-8">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-display text-7xl md:text-[96px] font-light text-foreground leading-none"
+            className="font-display text-5xl sm:text-7xl md:text-[96px] font-light text-foreground leading-none"
           >
             Get in touch
           </motion.h1>
-          <div className="h-px bg-border mt-8" />
+          <div className="h-px bg-border mt-6 sm:mt-8" />
         </div>
       </section>
 
       {/* INFO GRID */}
-      <section className="bg-background py-12">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <section className="bg-background py-8 sm:py-12">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12">
             <div>
               <p className="font-body text-[10px] uppercase tracking-[0.2em] text-accent mb-3">Head Office</p>
               <p className="font-body text-[14px] text-foreground leading-[1.7]">
@@ -89,13 +89,13 @@ const Contact = () => {
 
       {/* CONTACT FORM */}
       <section className="section-padding bg-background">
-        <div className="container mx-auto px-6 max-w-2xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-2xl">
           <motion.form
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             onSubmit={handleSubmit(onSubmit)}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
             <div>
               <label className={labelClass}>Full Name</label>

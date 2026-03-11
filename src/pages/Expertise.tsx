@@ -6,13 +6,13 @@ const services = [
   {
     num: "01",
     name: "Architecture & Planning",
-    desc: "We provide comprehensive architectural design services spanning the full project lifecycle — from initial feasibility and concept design through to detailed design, planning approvals and construction documentation. Our portfolio includes residential complexes, commercial office buildings, industrial facilities and major public/institutional buildings.",
+    desc: "We provide comprehensive architectural design services spanning the full project lifecycle — from initial feasibility and concept design through to detailed design, planning approvals and construction documentation.",
     bullets: ["Concept & Schematic Design", "Planning Applications", "Construction Documentation", "Interior Space Planning", "Urban Design"],
   },
   {
     num: "02",
     name: "Structural Engineering",
-    desc: "Our structural engineers design robust, efficient structural systems for all building types. We use the latest engineering software to analyse and optimise structures, ensuring safety, buildability and cost-efficiency.",
+    desc: "Our structural engineers design robust, efficient structural systems for all building types. We use the latest engineering software to analyse and optimise structures.",
     bullets: ["Structural Analysis & Design", "Foundation Engineering", "Steel & Concrete Design", "Seismic Assessment", "Industrial Structures"],
   },
   {
@@ -36,7 +36,7 @@ const services = [
   {
     num: "06",
     name: "Geodetic Engineering & Surveying",
-    desc: "Accurate surveying and geodetic engineering underpins every successful construction project. Our surveyors provide reliable data for design, planning and construction across all terrain types.",
+    desc: "Accurate surveying and geodetic engineering underpins every successful construction project. Our surveyors provide reliable data for design, planning and construction.",
     bullets: ["Topographic Survey", "Cadastral Survey", "Setting Out", "GPS/GIS Services", "As-built Documentation"],
   },
 ];
@@ -49,25 +49,25 @@ const Expertise = () => {
   return (
     <>
       {/* PAGE HEADER */}
-      <section className="bg-background pt-32 pb-8">
-        <div className="container mx-auto px-6">
+      <section className="bg-background pt-24 sm:pt-32 pb-6 sm:pb-8">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-display text-7xl md:text-[96px] font-light text-foreground leading-none"
+            className="font-display text-5xl sm:text-7xl md:text-[96px] font-light text-foreground leading-none"
           >
             Expertise
           </motion.h1>
-          <p className="font-body text-[16px] font-light text-muted-foreground mt-6 max-w-lg leading-[1.8]">
+          <p className="font-body text-[15px] sm:text-[16px] font-light text-muted-foreground mt-4 sm:mt-6 max-w-lg leading-[1.8]">
             Architecture, engineering and technical consultancy across six disciplines.
           </p>
-          <div className="h-px bg-border mt-8" />
+          <div className="h-px bg-border mt-6 sm:mt-8" />
         </div>
       </section>
 
       {/* DISCIPLINES */}
       <section className="section-padding bg-background">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           {services.map((s, i) => (
             <motion.div
               key={i}
@@ -75,25 +75,25 @@ const Expertise = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12 py-16 border-b border-border relative"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 py-12 sm:py-16 border-b border-border relative"
             >
               {/* Background Number */}
-              <span className="absolute top-8 left-0 font-display text-[120px] font-light text-secondary leading-none select-none pointer-events-none">
+              <span className="absolute top-6 sm:top-8 left-0 font-display text-[80px] sm:text-[120px] font-light text-secondary leading-none select-none pointer-events-none">
                 {s.num}
               </span>
 
               {/* Content */}
               <div className="relative z-10 lg:pl-8">
-                <h2 className="font-display text-[40px] font-normal text-foreground leading-tight">
+                <h2 className="font-display text-[28px] sm:text-[40px] font-normal text-foreground leading-tight">
                   {s.name}
                 </h2>
-                <p className="font-body text-[15px] font-light text-muted-foreground mt-6 max-w-lg leading-[1.8]">
+                <p className="font-body text-[14px] sm:text-[15px] font-light text-muted-foreground mt-4 sm:mt-6 max-w-lg leading-[1.8]">
                   {s.desc}
                 </p>
               </div>
 
               <div className="relative z-10">
-                <div className="space-y-2 mb-8">
+                <div className="space-y-2 mb-6 sm:mb-8">
                   {s.bullets.map((b, j) => (
                     <p key={j} className="font-body text-[13px] text-muted-foreground">
                       — {b}

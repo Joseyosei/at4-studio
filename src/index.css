@@ -50,14 +50,65 @@
     --sidebar-border: 0 0% 90%;
     --sidebar-ring: 30 26% 44%;
   }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 30 10% 96%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 30 10% 96%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 30 10% 96%;
+
+    --primary: 30 10% 96%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 30 10% 96%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 30 26% 50%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 30 26% 50%;
+
+    /* AT4 Custom Tokens - Dark */
+    --bronze: 30 26% 50%;
+    --stone: 0 0% 10%;
+    --grey-text: 0 0% 70%;
+    --grey-light: 0 0% 40%;
+    --grey-faint: 0 0% 10%;
+
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 30 10% 96%;
+    --sidebar-primary: 30 10% 96%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 30 10% 96%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 30 26% 50%;
+  }
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
   body {
     @apply bg-background text-foreground font-body antialiased;
+    padding-env: safe-area-inset-top safe-area-inset-right safe-area-inset-bottom safe-area-inset-left;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
@@ -66,13 +117,13 @@
 
 @layer components {
   .section-padding {
-    @apply py-20 md:py-28;
+    @apply py-16 md:py-28;
   }
   .section-label {
     @apply font-body text-[11px] uppercase tracking-[0.2em] text-accent mb-4 inline-block;
   }
   .section-heading {
-    @apply font-display text-5xl md:text-[64px] font-light text-foreground leading-[1.1];
+    @apply font-display text-4xl md:text-[64px] font-light text-foreground leading-[1.1];
   }
 }
 
