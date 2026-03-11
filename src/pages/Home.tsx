@@ -80,24 +80,24 @@ const Home = () => {
   return (
     <>
       {/* HERO */}
-      <section className="min-h-screen flex items-center bg-background pt-20">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="min-h-screen flex items-center bg-background pt-16 sm:pt-20">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left */}
-            <div className="lg:pl-4">
+            <div className="lg:pl-4 order-2 lg:order-1">
               <motion.p custom={0} variants={fadeUp} initial="hidden" animate="visible"
-                className="font-body text-[10px] uppercase tracking-[0.3em] text-accent mb-8">
+                className="font-body text-[10px] uppercase tracking-[0.3em] text-accent mb-6 sm:mb-8">
                 Arch-Team 4 Consultancy
               </motion.p>
               <motion.h1 custom={1} variants={fadeUp} initial="hidden" animate="visible"
-                className="font-display text-6xl sm:text-7xl lg:text-[80px] font-light text-foreground leading-[1.0] tracking-[-0.02em]">
+                className="font-display text-4xl sm:text-6xl lg:text-[80px] font-light text-foreground leading-[1.0] tracking-[-0.02em]">
                 Engineering<br />Ghana's Built<br />Environment
               </motion.h1>
               <motion.p custom={2} variants={fadeUp} initial="hidden" animate="visible"
-                className="font-body text-[17px] font-light text-muted-foreground max-w-sm mt-8 leading-[1.7]">
+                className="font-body text-[15px] sm:text-[17px] font-light text-muted-foreground max-w-sm mt-6 sm:mt-8 leading-[1.7]">
                 A consortium of architects, engineers and planners delivering world-class AEC consultancy across Ghana since 1993.
               </motion.p>
-              <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="flex flex-wrap gap-6 mt-10">
+              <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="flex flex-wrap gap-6 mt-8 sm:mt-10">
                 <Link to="/projects"
                   className="font-body text-[13px] text-foreground relative pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-foreground after:origin-left after:scale-x-100 hover:after:scale-x-0 after:transition-transform after:duration-300">
                   View Projects →
@@ -114,7 +114,7 @@ const Home = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative aspect-[4/5] lg:aspect-[3/4] overflow-hidden"
+              className="relative aspect-[4/3] sm:aspect-[4/5] lg:aspect-[3/4] overflow-hidden order-1 lg:order-2"
             >
               <img src={imgDigitalFront} alt="Accra Digital Centre" className="w-full h-full object-cover" />
             </motion.div>
@@ -123,14 +123,14 @@ const Home = () => {
       </section>
 
       {/* STATS BAR */}
-      <section className="bg-secondary border-t border-b border-border py-12">
-        <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4">
+      <section className="bg-secondary border-t border-b border-border py-8 sm:py-12">
+        <div className="container mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4">
           {stats.map((s, i) => (
-            <div key={i} className={`text-center py-4 ${i < 3 ? "md:border-r md:border-border" : ""}`}>
-              <div className="font-display text-[52px] font-light text-foreground leading-none">
+            <div key={i} className={`text-center py-3 sm:py-4 ${i < 3 ? "md:border-r md:border-border" : ""} ${i % 2 === 0 && i < 2 ? "border-r border-border md:border-r" : ""}`}>
+              <div className="font-display text-[40px] sm:text-[52px] font-light text-foreground leading-none">
                 <AnimatedCounter target={s.num} suffix={s.suffix} />
               </div>
-              <p className="font-body text-[10px] uppercase tracking-[0.2em] text-accent mt-3">{s.label}</p>
+              <p className="font-body text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-accent mt-2 sm:mt-3">{s.label}</p>
             </div>
           ))}
         </div>
@@ -138,21 +138,21 @@ const Home = () => {
 
       {/* FEATURED PROJECTS — F+P LIST STYLE */}
       <section className="section-padding bg-background">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="section-label">
             Selected Works
           </motion.p>
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="font-display text-6xl md:text-[72px] font-light text-foreground leading-[1.1] mb-4">
+            className="font-display text-4xl sm:text-6xl md:text-[72px] font-light text-foreground leading-[1.1] mb-4">
             Projects
           </motion.h2>
           <div className="h-px bg-border mb-2" />
 
           {projects.map((p, i) => (
             <Link to={`/projects/${p.id}`} key={i}
-              className="group grid grid-cols-[40px_1fr] md:grid-cols-[40px_1fr_200px_160px_80px] items-center py-5 border-b border-border hover:bg-secondary transition-colors duration-200 px-2">
+              className="group grid grid-cols-[32px_1fr] sm:grid-cols-[40px_1fr] md:grid-cols-[40px_1fr_200px_160px_80px] items-center py-4 sm:py-5 border-b border-border hover:bg-secondary transition-colors duration-200 px-1 sm:px-2">
               <span className="font-body text-[11px] text-muted-foreground">{String(i + 1).padStart(3, "0")}</span>
-              <span className="font-display text-[22px] font-normal text-foreground group-hover:text-accent transition-colors duration-200">
+              <span className="font-display text-[16px] sm:text-[18px] md:text-[22px] font-normal text-foreground group-hover:text-accent transition-colors duration-200 truncate">
                 {p.name}
               </span>
               <span className="hidden md:block font-body text-[13px] text-accent">{p.loc}</span>
@@ -170,20 +170,20 @@ const Home = () => {
       </section>
 
       {/* EXPERTISE STRIP */}
-      <section className="py-16 bg-background border-t border-border">
-        <div className="container mx-auto px-6">
+      <section className="py-12 sm:py-16 bg-background border-t border-border">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="section-label">
             Our Expertise
           </motion.p>
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="font-display text-4xl md:text-5xl font-light text-foreground mb-10">
+            className="font-display text-3xl sm:text-4xl md:text-5xl font-light text-foreground mb-8 sm:mb-10">
             Six disciplines, one practice
           </motion.h2>
-          <div className="flex flex-wrap md:flex-nowrap items-center gap-0">
+          <div className="flex flex-wrap md:flex-nowrap items-center gap-y-2 gap-0">
             {expertiseItems.map((e, i) => (
-              <div key={i} className={`flex items-center gap-3 py-3 px-4 ${i < expertiseItems.length - 1 ? "md:border-r md:border-border" : ""} flex-shrink-0`}>
+              <div key={i} className={`flex items-center gap-3 py-2 sm:py-3 px-3 sm:px-4 ${i < expertiseItems.length - 1 ? "md:border-r md:border-border" : ""} flex-shrink-0`}>
                 <span className="font-body text-[11px] text-muted-foreground">{e.num}</span>
-                <span className="font-body text-[15px] text-foreground whitespace-nowrap">{e.name}</span>
+                <span className="font-body text-[13px] sm:text-[15px] text-foreground whitespace-nowrap">{e.name}</span>
               </div>
             ))}
           </div>
@@ -191,18 +191,18 @@ const Home = () => {
       </section>
 
       {/* STUDIO STATEMENT */}
-      <section className="py-24 md:py-32 bg-foreground">
-        <div className="container mx-auto px-6 text-center">
+      <section className="py-20 sm:py-24 md:py-32 bg-foreground">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <motion.blockquote
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-display text-3xl md:text-[52px] font-light italic text-primary-foreground max-w-[900px] mx-auto leading-[1.2]"
+            className="font-display text-2xl sm:text-3xl md:text-[52px] font-light italic text-primary-foreground max-w-[900px] mx-auto leading-[1.2]"
           >
             "We are our clients' most trusted provider of Architecture, Engineering and Construction services — built on three decades of delivering excellence across Ghana."
           </motion.blockquote>
-          <p className="font-body text-[12px] uppercase tracking-[0.2em] text-accent mt-8">
+          <p className="font-body text-[12px] uppercase tracking-[0.2em] text-accent mt-6 sm:mt-8">
             — Arch-Team 4 Consultancy, Est. 1993
           </p>
         </div>
@@ -210,20 +210,20 @@ const Home = () => {
 
       {/* CTA */}
       <section className="section-padding bg-background">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
             <div>
-              <h2 className="font-display text-5xl md:text-[64px] font-light text-foreground leading-[1.1]">
+              <h2 className="font-display text-4xl sm:text-5xl md:text-[64px] font-light text-foreground leading-[1.1]">
                 Start a Project
               </h2>
-              <p className="font-body text-[16px] font-light text-muted-foreground mt-6 max-w-md leading-[1.8]">
+              <p className="font-body text-[15px] sm:text-[16px] font-light text-muted-foreground mt-6 max-w-md leading-[1.8]">
                 From concept to completion — let AT4's expert team guide your next architectural or engineering project.
               </p>
               <Link to="/contact" className="inline-block font-body text-[13px] text-accent mt-6 hover:text-foreground transition-colors">
                 Contact Us →
               </Link>
             </div>
-            <div className="border-l border-border pl-8 md:pl-12 space-y-6">
+            <div className="border-t md:border-t-0 md:border-l border-border pt-8 md:pt-0 md:pl-12 space-y-6">
               <div>
                 <p className="font-body text-[11px] uppercase tracking-[0.2em] text-accent mb-2">Address</p>
                 <p className="font-body text-[14px] text-muted-foreground">H/No. 8B, Agbogba Road, Accra, Ghana</p>

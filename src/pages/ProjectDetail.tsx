@@ -28,7 +28,7 @@ const projectData: Record<string, {
     loc: "Greater Accra, Ghana",
     cat: "Architecture · Commercial",
     year: "2020",
-    description: "A flagship commercial development in Accra, the Digital Centre represents AT4's commitment to modern architectural design that serves Ghana's growing technology and business sectors. The building features contemporary facades with functional interior spaces designed for digital enterprises.",
+    description: "A flagship commercial development in Accra, the Digital Centre represents AT4's commitment to modern architectural design that serves Ghana's growing technology and business sectors.",
     images: [imgDigitalFront, imgDigitalEntrance, imgDigitalAerial, imgDigitalStreet],
     details: [
       { label: "Client", value: "Government of Ghana" },
@@ -44,7 +44,7 @@ const projectData: Record<string, {
     loc: "Greater Accra, Ghana",
     cat: "Architecture · Commercial",
     year: "2020",
-    description: "The main entrance of the Accra Digital Centre showcases architectural detailing that balances aesthetic appeal with practical functionality. The entrance design creates an inviting gateway for tenants and visitors.",
+    description: "The main entrance of the Accra Digital Centre showcases architectural detailing that balances aesthetic appeal with practical functionality.",
     images: [imgDigitalEntrance, imgDigitalFront, imgDigitalAerial, imgDigitalStreet],
     details: [
       { label: "Client", value: "Government of Ghana" },
@@ -58,7 +58,7 @@ const projectData: Record<string, {
     loc: "Greater Accra, Ghana",
     cat: "Architecture · Commercial",
     year: "2020",
-    description: "An aerial perspective of the Accra Digital Centre revealing the full scale and urban context of this major development within the Greater Accra metropolitan area.",
+    description: "An aerial perspective of the Accra Digital Centre revealing the full scale and urban context of this major development.",
     images: [imgDigitalAerial, imgDigitalFront, imgDigitalEntrance, imgDigitalStreet],
     details: [
       { label: "Client", value: "Government of Ghana" },
@@ -72,7 +72,7 @@ const projectData: Record<string, {
     loc: "Greater Accra, Ghana",
     cat: "Architecture · Commercial",
     year: "2020",
-    description: "Street-level view of the Accra Digital Centre demonstrating how the building integrates with its urban surroundings and contributes to the streetscape of the area.",
+    description: "Street-level view of the Accra Digital Centre demonstrating how the building integrates with its urban surroundings.",
     images: [imgDigitalStreet, imgDigitalFront, imgDigitalEntrance, imgDigitalAerial],
     details: [
       { label: "Client", value: "Government of Ghana" },
@@ -86,7 +86,7 @@ const projectData: Record<string, {
     loc: "Accra, Ghana",
     cat: "Architecture · Public Sector",
     year: "2017",
-    description: "A landmark government office building designed to house the Ministry of Roads and Highways. The design emphasizes functionality, durability, and a civic presence befitting a major government institution.",
+    description: "A landmark government office building designed to house the Ministry of Roads and Highways, emphasizing functionality, durability, and civic presence.",
     images: [imgMinistryRoads],
     details: [
       { label: "Client", value: "Ministry of Roads & Highways" },
@@ -102,7 +102,7 @@ const projectData: Record<string, {
     loc: "Tarkwa, Western Region",
     cat: "Architecture · Institutional",
     year: "2018",
-    description: "The main academic block at the University of Mines and Technology in Tarkwa, designed to support the institution's teaching and research mission with modern, functional spaces.",
+    description: "The main academic block at UMaT, designed to support the institution's teaching and research mission with modern, functional spaces.",
     images: [imgUmat1, imgUmat2, imgUmat3, imgUmat4, imgUmat5],
     details: [
       { label: "Client", value: "University of Mines & Technology" },
@@ -118,7 +118,7 @@ const projectData: Record<string, {
     loc: "Tarkwa, Western Region",
     cat: "Architecture · Institutional",
     year: "2018",
-    description: "The academic wing extension at UMaT provides additional teaching and laboratory facilities, designed to accommodate the university's expanding student population.",
+    description: "The academic wing extension at UMaT provides additional teaching and laboratory facilities.",
     images: [imgUmat2, imgUmat1, imgUmat3, imgUmat4, imgUmat5],
     details: [
       { label: "Client", value: "University of Mines & Technology" },
@@ -132,7 +132,7 @@ const projectData: Record<string, {
     loc: "Tarkwa, Western Region",
     cat: "Architecture · Institutional",
     year: "2018",
-    description: "The inauguration ceremony of the UMaT campus development, marking the completion of a significant phase in the university's infrastructure expansion.",
+    description: "The inauguration ceremony marking the completion of a significant phase in UMaT's infrastructure expansion.",
     images: [imgUmat3, imgUmat1, imgUmat2, imgUmat4, imgUmat5],
     details: [
       { label: "Client", value: "University of Mines & Technology" },
@@ -146,7 +146,7 @@ const projectData: Record<string, {
     loc: "Tarkwa, Western Region",
     cat: "Architecture · Institutional",
     year: "2018",
-    description: "A comprehensive view of the UMaT campus showing the integrated design approach across multiple buildings and facilities.",
+    description: "A comprehensive view of the UMaT campus showing the integrated design approach across multiple buildings.",
     images: [imgUmat4, imgUmat1, imgUmat2, imgUmat3, imgUmat5],
     details: [
       { label: "Client", value: "University of Mines & Technology" },
@@ -160,7 +160,7 @@ const projectData: Record<string, {
     loc: "Tarkwa, Western Region",
     cat: "Architecture · Institutional",
     year: "2018",
-    description: "The full campus view of UMaT showcasing AT4's masterplanning capabilities across this major institutional development.",
+    description: "The full campus view showcasing AT4's masterplanning capabilities across this major institutional development.",
     images: [imgUmat5, imgUmat1, imgUmat2, imgUmat3, imgUmat4],
     details: [
       { label: "Client", value: "University of Mines & Technology" },
@@ -174,7 +174,7 @@ const projectData: Record<string, {
     loc: "Wa, Upper West",
     cat: "Architecture · Public Sector",
     year: "2015",
-    description: "A civic building designed to serve the Wa Municipal Assembly, combining functional office spaces with a dignified public presence appropriate for local government.",
+    description: "A civic building designed to serve the Wa Municipal Assembly, combining functional office spaces with a dignified public presence.",
     images: [imgMinistryRoads],
     details: [
       { label: "Client", value: "Wa Municipal Assembly" },
@@ -189,7 +189,7 @@ const projectData: Record<string, {
     loc: "Ashanti Region",
     cat: "Structural Engineering",
     year: "2019",
-    description: "A large-scale industrial warehouse designed for the Ashanti Region, featuring optimised structural systems for maximum clear-span functionality.",
+    description: "A large-scale industrial warehouse featuring optimised structural systems for maximum clear-span functionality.",
     images: [imgUmat4],
     details: [
       { label: "Location", value: "Kumasi, Ashanti Region" },
@@ -204,7 +204,7 @@ const projectData: Record<string, {
     loc: "Accra",
     cat: "Architecture · Institutional",
     year: "2021",
-    description: "An extension to the Ghana Institute of Management and Public Administration campus, providing additional academic and administrative facilities.",
+    description: "An extension to GIMPA campus, providing additional academic and administrative facilities.",
     images: [imgDigitalFront, imgDigitalAerial],
     details: [
       { label: "Client", value: "GIMPA" },
@@ -250,8 +250,8 @@ const ProjectDetail = () => {
   return (
     <>
       {/* BACK LINK */}
-      <section className="bg-background pt-24 pb-4">
-        <div className="container mx-auto px-6">
+      <section className="bg-background pt-20 sm:pt-24 pb-4">
+        <div className="container mx-auto px-4 sm:px-6">
           <Link to="/projects" className="font-body text-[13px] text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2">
             <ArrowLeft size={14} /> Back to Projects
           </Link>
@@ -259,8 +259,8 @@ const ProjectDetail = () => {
       </section>
 
       {/* HERO IMAGE */}
-      <section className="bg-background pb-8">
-        <div className="container mx-auto px-6">
+      <section className="bg-background pb-6 sm:pb-8">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -278,14 +278,14 @@ const ProjectDetail = () => {
 
       {/* THUMBNAIL GALLERY */}
       {project.images.length > 1 && (
-        <section className="bg-background pb-12">
-          <div className="container mx-auto px-6">
+        <section className="bg-background pb-8 sm:pb-12">
+          <div className="container mx-auto px-4 sm:px-6">
             <div className="flex gap-2 overflow-x-auto pb-2">
               {project.images.map((img, i) => (
                 <button
                   key={i}
                   onClick={() => setActiveImage(i)}
-                  className={`flex-shrink-0 w-20 h-14 overflow-hidden border-2 transition-colors duration-200 ${
+                  className={`flex-shrink-0 w-16 h-11 sm:w-20 sm:h-14 overflow-hidden border-2 transition-colors duration-200 ${
                     activeImage === i ? "border-foreground" : "border-transparent hover:border-border"
                   }`}
                 >
@@ -299,21 +299,21 @@ const ProjectDetail = () => {
 
       {/* PROJECT INFO */}
       <section className="bg-background section-padding">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 lg:gap-16">
             {/* Left - Description */}
             <div>
               <p className="font-body text-[11px] uppercase tracking-[0.2em] text-accent mb-4">{project.cat}</p>
-              <h1 className="font-display text-4xl md:text-[56px] font-light text-foreground leading-[1.1] mb-8">
+              <h1 className="font-display text-3xl sm:text-4xl md:text-[56px] font-light text-foreground leading-[1.1] mb-6 sm:mb-8">
                 {project.name}
               </h1>
-              <p className="font-body text-[16px] font-light text-muted-foreground leading-[1.8] max-w-[620px]">
+              <p className="font-body text-[15px] sm:text-[16px] font-light text-muted-foreground leading-[1.8] max-w-[620px]">
                 {project.description}
               </p>
             </div>
 
             {/* Right - Details */}
-            <div className="border-l border-border pl-8">
+            <div className="border-t lg:border-t-0 lg:border-l border-border pt-8 lg:pt-0 lg:pl-8">
               {project.details.map((d, i) => (
                 <div key={i} className={`py-4 ${i < project.details.length - 1 ? "border-b border-border" : ""}`}>
                   <p className="font-body text-[11px] uppercase tracking-[0.2em] text-accent mb-1">{d.label}</p>
@@ -324,15 +324,15 @@ const ProjectDetail = () => {
           </div>
 
           {/* NAVIGATION */}
-          <div className="flex justify-between items-center mt-20 pt-8 border-t border-border">
+          <div className="flex justify-between items-center mt-16 sm:mt-20 pt-8 border-t border-border">
             {prevProject ? (
               <Link to={`/projects/${prevProject}`} className="font-body text-[13px] text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2">
-                <ArrowLeft size={14} /> Previous Project
+                <ArrowLeft size={14} /> Previous
               </Link>
             ) : <div />}
             {nextProject ? (
               <Link to={`/projects/${nextProject}`} className="font-body text-[13px] text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2">
-                Next Project <ArrowRight size={14} />
+                Next <ArrowRight size={14} />
               </Link>
             ) : <div />}
           </div>

@@ -48,12 +48,12 @@ const Projects = () => {
   return (
     <>
       {/* PAGE HEADER */}
-      <section className="bg-background pt-32 pb-8">
-        <div className="container mx-auto px-6">
+      <section className="bg-background pt-24 sm:pt-32 pb-6 sm:pb-8">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-display text-7xl md:text-[96px] font-light text-foreground leading-none"
+            className="font-display text-5xl sm:text-7xl md:text-[96px] font-light text-foreground leading-none"
           >
             Projects
           </motion.h1>
@@ -63,13 +63,13 @@ const Projects = () => {
       </section>
 
       {/* FILTER BAR */}
-      <section className="bg-background border-b border-border sticky top-[73px] z-40">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex flex-wrap items-center gap-6">
-            <div className="flex flex-wrap gap-4">
+      <section className="bg-background border-b border-border sticky top-[57px] sm:top-[65px] z-40">
+        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+          <div className="flex items-center gap-4 sm:gap-6">
+            <div className="flex gap-3 sm:gap-4 overflow-x-auto flex-nowrap pb-1 scrollbar-hide">
               {typeFilters.map((f) => (
                 <button key={f} onClick={() => setTypeFilter(f)}
-                  className={`font-body text-[13px] pb-1 transition-colors duration-200 ${
+                  className={`font-body text-[12px] sm:text-[13px] pb-1 transition-colors duration-200 whitespace-nowrap flex-shrink-0 ${
                     typeFilter === f
                       ? "text-foreground border-b border-foreground"
                       : "text-muted-foreground hover:text-foreground"
@@ -78,11 +78,11 @@ const Projects = () => {
                 </button>
               ))}
             </div>
-            <div className="h-4 w-px bg-border hidden md:block" />
-            <div className="flex flex-wrap gap-4">
+            <div className="h-4 w-px bg-border hidden md:block flex-shrink-0" />
+            <div className="hidden md:flex gap-4">
               {locationFilters.map((f) => (
                 <button key={f} onClick={() => setLocFilter(f)}
-                  className={`font-body text-[13px] pb-1 transition-colors duration-200 ${
+                  className={`font-body text-[13px] pb-1 transition-colors duration-200 whitespace-nowrap ${
                     locFilter === f
                       ? "text-foreground border-b border-foreground"
                       : "text-muted-foreground hover:text-foreground"
@@ -91,7 +91,7 @@ const Projects = () => {
                 </button>
               ))}
             </div>
-            <div className="ml-auto flex gap-2">
+            <div className="ml-auto flex gap-2 flex-shrink-0">
               <button onClick={() => setView("list")} className={`p-1.5 ${view === "list" ? "text-foreground" : "text-muted-foreground"}`}>
                 <List size={18} />
               </button>
@@ -105,7 +105,7 @@ const Projects = () => {
 
       {/* PROJECTS DISPLAY */}
       <section className="bg-background section-padding">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           {view === "list" ? (
             <div>
               <AnimatePresence mode="popLayout">
@@ -117,9 +117,9 @@ const Projects = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <Link to={`/projects/${p.id}`}
-                      className="group grid grid-cols-[40px_1fr] md:grid-cols-[60px_1fr_220px_180px_80px_40px] items-center py-5 border-b border-border hover:bg-secondary transition-colors duration-200 px-2">
+                      className="group grid grid-cols-[32px_1fr] sm:grid-cols-[40px_1fr] md:grid-cols-[60px_1fr_220px_180px_80px_40px] items-center py-4 sm:py-5 border-b border-border hover:bg-secondary transition-colors duration-200 px-1 sm:px-2">
                       <span className="font-body text-[11px] text-muted-foreground">{String(i + 1).padStart(3, "0")}</span>
-                      <span className="font-body text-[16px] font-normal text-foreground group-hover:text-accent transition-colors duration-200">
+                      <span className="font-body text-[14px] sm:text-[16px] font-normal text-foreground group-hover:text-accent transition-colors duration-200 truncate">
                         {p.name}
                       </span>
                       <span className="hidden md:block font-body text-[13px] text-accent">{p.loc}</span>
@@ -132,7 +132,7 @@ const Projects = () => {
               </AnimatePresence>
             </div>
           ) : (
-            <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-1">
+            <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 gap-1">
               <AnimatePresence mode="popLayout">
                 {filtered.map((p) => (
                   <motion.div key={p.id} layout
@@ -144,9 +144,9 @@ const Projects = () => {
                       className="group relative aspect-[4/3] block overflow-hidden">
                       <img src={p.img} alt={p.name} className="w-full h-full object-cover" />
                       <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-colors duration-300" />
-                      <div className="absolute bottom-0 left-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h3 className="font-body text-[16px] text-primary-foreground">{p.name}</h3>
-                        <p className="font-body text-[13px] text-primary-foreground/70 mt-1">{p.loc}</p>
+                      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 className="font-body text-[14px] sm:text-[16px] text-primary-foreground">{p.name}</h3>
+                        <p className="font-body text-[12px] sm:text-[13px] text-primary-foreground/70 mt-1">{p.loc}</p>
                       </div>
                     </Link>
                   </motion.div>

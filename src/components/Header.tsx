@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import AT4Logo from "@/assets/AT4_Logo.png";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks = [
   { label: "Projects", path: "/projects" },
@@ -33,15 +34,15 @@ const Header = () => {
           scrolled ? "border-foreground/10" : "border-border"
         }`}
       >
-        <div className="container mx-auto flex items-center justify-between px-6 py-4">
+        <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3" aria-label="AT4 Home">
-            <img src={AT4Logo} alt="AT4 Logo" className="h-9 w-9 rounded-full" />
+          <Link to="/" className="flex items-center gap-2 sm:gap-3" aria-label="AT4 Home">
+            <img src={AT4Logo} alt="AT4 Logo" className="h-8 w-8 sm:h-9 sm:w-9 rounded-full" />
             <div className="flex flex-col">
-              <span className="font-display text-[22px] font-normal text-foreground leading-none">
+              <span className="font-display text-[20px] sm:text-[22px] font-normal text-foreground leading-none">
                 AT4
               </span>
-              <span className="font-body text-[9px] uppercase tracking-[0.25em] text-accent leading-tight mt-0.5">
+              <span className="font-body text-[8px] sm:text-[9px] uppercase tracking-[0.25em] text-accent leading-tight mt-0.5">
                 Arch-Team 4 Consultancy
               </span>
             </div>
@@ -64,11 +65,12 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA + Mobile Toggle */}
-          <div className="flex items-center gap-6">
+          {/* CTA + Theme Toggle + Mobile Toggle */}
+          <div className="flex items-center gap-3 sm:gap-4">
+            <ThemeToggle />
             <Link
               to="/contact"
-              className="hidden md:inline-flex font-body text-[13px] text-foreground border-l border-border pl-6 hover:text-accent transition-colors duration-200"
+              className="hidden md:inline-flex font-body text-[13px] text-foreground border-l border-border pl-4 hover:text-accent transition-colors duration-200"
             >
               Get In Touch
             </Link>
@@ -77,7 +79,7 @@ const Header = () => {
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
-              <Menu size={24} />
+              <Menu size={22} />
             </button>
           </div>
         </div>
@@ -93,13 +95,13 @@ const Header = () => {
             className="fixed inset-0 z-[60] bg-background flex flex-col items-center justify-center"
           >
             <button
-              className="absolute top-6 right-6 text-foreground"
+              className="absolute top-4 right-4 text-foreground"
               onClick={() => setMobileOpen(false)}
               aria-label="Close menu"
             >
               <X size={28} />
             </button>
-            <nav className="flex flex-col items-center gap-8" aria-label="Mobile navigation">
+            <nav className="flex flex-col items-center gap-6 sm:gap-8" aria-label="Mobile navigation">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.path}
@@ -109,7 +111,7 @@ const Header = () => {
                 >
                   <Link
                     to={link.path}
-                    className={`font-display text-[48px] font-light ${
+                    className={`font-display text-[36px] sm:text-[48px] font-light ${
                       location.pathname === link.path ? "text-accent" : "text-foreground"
                     }`}
                   >
@@ -121,10 +123,12 @@ const Header = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
+                className="flex items-center gap-4 mt-4"
               >
+                <ThemeToggle />
                 <Link
                   to="/contact"
-                  className="font-body text-[13px] text-accent mt-4 inline-block"
+                  className="font-body text-[13px] text-accent inline-block"
                 >
                   Get In Touch →
                 </Link>
