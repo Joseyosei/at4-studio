@@ -13,6 +13,14 @@ import imgUmat2 from "@/assets/projects/umat-2.jpeg";
 import imgUmat3 from "@/assets/projects/umat-3.jpeg";
 import imgUmat4 from "@/assets/projects/umat-4.png";
 import imgUmat5 from "@/assets/projects/umat-5.jpeg";
+import imgTakoradiLibrary from "@/assets/projects/takoradi-library.png";
+import imgTakoradiBusiness from "@/assets/projects/takoradi-business.png";
+import imgSakomono1 from "@/assets/projects/sakomono-1.jpg";
+import imgSakomono2 from "@/assets/projects/sakomono-2.jpg";
+import imgSakomono3 from "@/assets/projects/sakomono-3.jpg";
+import imgSakomono4 from "@/assets/projects/sakomono-4.jpg";
+import imgSakomono5 from "@/assets/projects/sakomono-5.jpg";
+import imgSakomono6 from "@/assets/projects/sakomono-6.png";
 
 const projectData: Record<string, {
   name: string;
@@ -24,7 +32,7 @@ const projectData: Record<string, {
   details: { label: string; value: string }[];
 }> = {
   "accra-digital-centre": {
-    name: "Accra Digital Centre — Front Entrance",
+    name: "Accra Digital Centre",
     loc: "Greater Accra, Ghana",
     cat: "Architecture · Commercial",
     year: "2020",
@@ -37,48 +45,6 @@ const projectData: Record<string, {
       { label: "Year", value: "2020" },
       { label: "Type", value: "Commercial · Technology Hub" },
       { label: "Services", value: "Architecture, Structural Engineering, Electrical Engineering" },
-    ],
-  },
-  "accra-digital-centre-entrance": {
-    name: "Accra Digital Centre — Building Entrance",
-    loc: "Greater Accra, Ghana",
-    cat: "Architecture · Commercial",
-    year: "2020",
-    description: "The main entrance of the Accra Digital Centre showcases architectural detailing that balances aesthetic appeal with practical functionality.",
-    images: [imgDigitalEntrance, imgDigitalFront, imgDigitalAerial, imgDigitalStreet],
-    details: [
-      { label: "Client", value: "Government of Ghana" },
-      { label: "Location", value: "Greater Accra, Ghana" },
-      { label: "Status", value: "Completed" },
-      { label: "Year", value: "2020" },
-    ],
-  },
-  "accra-digital-aerial": {
-    name: "Accra Digital Centre — Aerial View",
-    loc: "Greater Accra, Ghana",
-    cat: "Architecture · Commercial",
-    year: "2020",
-    description: "An aerial perspective of the Accra Digital Centre revealing the full scale and urban context of this major development.",
-    images: [imgDigitalAerial, imgDigitalFront, imgDigitalEntrance, imgDigitalStreet],
-    details: [
-      { label: "Client", value: "Government of Ghana" },
-      { label: "Location", value: "Greater Accra, Ghana" },
-      { label: "Status", value: "Completed" },
-      { label: "Year", value: "2020" },
-    ],
-  },
-  "accra-digital-street": {
-    name: "Accra Digital Centre — Street View",
-    loc: "Greater Accra, Ghana",
-    cat: "Architecture · Commercial",
-    year: "2020",
-    description: "Street-level view of the Accra Digital Centre demonstrating how the building integrates with its urban surroundings.",
-    images: [imgDigitalStreet, imgDigitalFront, imgDigitalEntrance, imgDigitalAerial],
-    details: [
-      { label: "Client", value: "Government of Ghana" },
-      { label: "Location", value: "Greater Accra, Ghana" },
-      { label: "Status", value: "Completed" },
-      { label: "Year", value: "2020" },
     ],
   },
   "ministry-roads": {
@@ -97,12 +63,12 @@ const projectData: Record<string, {
       { label: "Services", value: "Architecture, Structural Engineering" },
     ],
   },
-  "umat-main": {
-    name: "University of Mines & Technology — Main Block",
+  "umat": {
+    name: "University of Mines & Technology",
     loc: "Tarkwa, Western Region",
     cat: "Architecture · Institutional",
     year: "2018",
-    description: "The main academic block at UMaT, designed to support the institution's teaching and research mission with modern, functional spaces.",
+    description: "A comprehensive campus development at UMaT, featuring multiple academic blocks, teaching facilities, and administrative buildings designed to support the institution's teaching and research mission.",
     images: [imgUmat1, imgUmat2, imgUmat3, imgUmat4, imgUmat5],
     details: [
       { label: "Client", value: "University of Mines & Technology" },
@@ -113,105 +79,37 @@ const projectData: Record<string, {
       { label: "Services", value: "Architecture, Structural Engineering, Electrical Engineering" },
     ],
   },
-  "umat-academic": {
-    name: "University of Mines & Technology — Academic Wing",
-    loc: "Tarkwa, Western Region",
+  "takoradi-tech": {
+    name: "Takoradi Technical University",
+    loc: "Takoradi, Western Region",
     cat: "Architecture · Institutional",
-    year: "2018",
-    description: "The academic wing extension at UMaT provides additional teaching and laboratory facilities.",
-    images: [imgUmat2, imgUmat1, imgUmat3, imgUmat4, imgUmat5],
+    year: "2016",
+    description: "Two major building projects for Takoradi Technical University: a completed 3-storey Library Block Extension and a 4-storey School of Business Classroom Block at Butumagyebu, both designed to expand the university's academic infrastructure.",
+    images: [imgTakoradiLibrary, imgTakoradiBusiness],
     details: [
-      { label: "Client", value: "University of Mines & Technology" },
-      { label: "Location", value: "Tarkwa, Western Region" },
+      { label: "Client", value: "Takoradi Technical University" },
+      { label: "Location", value: "Takoradi, Western Region" },
       { label: "Status", value: "Completed" },
-      { label: "Year", value: "2018" },
-    ],
-  },
-  "umat-inauguration": {
-    name: "University of Mines & Technology — Inauguration",
-    loc: "Tarkwa, Western Region",
-    cat: "Architecture · Institutional",
-    year: "2018",
-    description: "The inauguration ceremony marking the completion of a significant phase in UMaT's infrastructure expansion.",
-    images: [imgUmat3, imgUmat1, imgUmat2, imgUmat4, imgUmat5],
-    details: [
-      { label: "Client", value: "University of Mines & Technology" },
-      { label: "Location", value: "Tarkwa, Western Region" },
-      { label: "Status", value: "Completed" },
-      { label: "Year", value: "2018" },
-    ],
-  },
-  "umat-campus": {
-    name: "University of Mines & Technology — Campus Overview",
-    loc: "Tarkwa, Western Region",
-    cat: "Architecture · Institutional",
-    year: "2018",
-    description: "A comprehensive view of the UMaT campus showing the integrated design approach across multiple buildings.",
-    images: [imgUmat4, imgUmat1, imgUmat2, imgUmat3, imgUmat5],
-    details: [
-      { label: "Client", value: "University of Mines & Technology" },
-      { label: "Location", value: "Tarkwa, Western Region" },
-      { label: "Status", value: "Completed" },
-      { label: "Year", value: "2018" },
-    ],
-  },
-  "umat-full": {
-    name: "University of Mines & Technology — Full Campus",
-    loc: "Tarkwa, Western Region",
-    cat: "Architecture · Institutional",
-    year: "2018",
-    description: "The full campus view showcasing AT4's masterplanning capabilities across this major institutional development.",
-    images: [imgUmat5, imgUmat1, imgUmat2, imgUmat3, imgUmat4],
-    details: [
-      { label: "Client", value: "University of Mines & Technology" },
-      { label: "Location", value: "Tarkwa, Western Region" },
-      { label: "Status", value: "Completed" },
-      { label: "Year", value: "2018" },
-    ],
-  },
-  "wa-municipal": {
-    name: "Wa Municipal Council Headquarters",
-    loc: "Wa, Upper West",
-    cat: "Architecture · Public Sector",
-    year: "2015",
-    description: "A civic building designed to serve the Wa Municipal Assembly, combining functional office spaces with a dignified public presence.",
-    images: [imgMinistryRoads],
-    details: [
-      { label: "Client", value: "Wa Municipal Assembly" },
-      { label: "Location", value: "Wa, Upper West Region" },
-      { label: "Status", value: "Completed" },
-      { label: "Year", value: "2015" },
-      { label: "Type", value: "Government · Civic" },
-    ],
-  },
-  "kumasi-warehouse": {
-    name: "Kumasi Industrial Warehouse Facility",
-    loc: "Ashanti Region",
-    cat: "Structural Engineering",
-    year: "2019",
-    description: "A large-scale industrial warehouse featuring optimised structural systems for maximum clear-span functionality.",
-    images: [imgUmat4],
-    details: [
-      { label: "Location", value: "Kumasi, Ashanti Region" },
-      { label: "Status", value: "Completed" },
-      { label: "Year", value: "2019" },
-      { label: "Type", value: "Industrial · Warehouse" },
-      { label: "Services", value: "Structural Engineering" },
-    ],
-  },
-  "gimpa-extension": {
-    name: "Ghana Institute of Management Extension",
-    loc: "Accra",
-    cat: "Architecture · Institutional",
-    year: "2021",
-    description: "An extension to GIMPA campus, providing additional academic and administrative facilities.",
-    images: [imgDigitalFront, imgDigitalAerial],
-    details: [
-      { label: "Client", value: "GIMPA" },
-      { label: "Location", value: "Accra, Ghana" },
-      { label: "Status", value: "Completed" },
-      { label: "Year", value: "2021" },
+      { label: "Year", value: "2016" },
       { label: "Type", value: "Institutional · Education" },
+      { label: "Services", value: "Architecture, Structural Engineering, Electrical Engineering" },
+    ],
+  },
+  "sakomono-flats": {
+    name: "Block of Flats at Sakumono, Accra",
+    loc: "Sakumono, Greater Accra",
+    cat: "Architecture · Residential",
+    year: "2022",
+    description: "15 No. 4-Storey 16 No. Flats of 3-Bedrooms each (240 Apartments) at Sakumono SSNIT Estates for Trust F-Line Properties Ltd.",
+    images: [imgSakomono1, imgSakomono2, imgSakomono3, imgSakomono4, imgSakomono5, imgSakomono6],
+    details: [
+      { label: "Client", value: "Trust F-Line Properties Ltd" },
+      { label: "Location", value: "Sakumono SSNIT Estates, Accra" },
+      { label: "Status", value: "Completed" },
+      { label: "Year", value: "2022" },
+      { label: "Type", value: "Residential · Apartments" },
+      { label: "Scope", value: "15 No. 4-Storey Buildings, 240 Apartments" },
+      { label: "Services", value: "Architecture, Structural Engineering, Electrical Engineering, Project Management" },
     ],
   },
 };
@@ -301,7 +199,6 @@ const ProjectDetail = () => {
       <section className="bg-background section-padding">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 lg:gap-16">
-            {/* Left - Description */}
             <div>
               <p className="font-body text-[11px] uppercase tracking-[0.2em] text-accent mb-4">{project.cat}</p>
               <h1 className="font-display text-3xl sm:text-4xl md:text-[56px] font-light text-foreground leading-[1.1] mb-6 sm:mb-8">
@@ -312,7 +209,6 @@ const ProjectDetail = () => {
               </p>
             </div>
 
-            {/* Right - Details */}
             <div className="border-t lg:border-t-0 lg:border-l border-border pt-8 lg:pt-0 lg:pl-8">
               {project.details.map((d, i) => (
                 <div key={i} className={`py-4 ${i < project.details.length - 1 ? "border-b border-border" : ""}`}>
