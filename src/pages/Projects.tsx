@@ -4,30 +4,20 @@ import { Link } from "react-router-dom";
 import { Grid, List } from "lucide-react";
 
 import imgMinistryRoads from "@/assets/projects/ministry-roads.png";
-import imgDigitalAerial from "@/assets/projects/accra-digital-centre-aerial.jpg";
-import imgDigitalStreet from "@/assets/projects/accra-digital-centre-street.jpg";
 import imgDigitalFront from "@/assets/projects/accra-digital-centre-front.jpg";
-import imgDigitalEntrance from "@/assets/projects/accra-digital-centre-entrance.png";
 import imgUmat1 from "@/assets/projects/umat-1.jpg";
-import imgUmat2 from "@/assets/projects/umat-2.jpeg";
-import imgUmat3 from "@/assets/projects/umat-3.jpeg";
-import imgUmat4 from "@/assets/projects/umat-4.png";
-import imgUmat5 from "@/assets/projects/umat-5.jpeg";
+import imgTakoradiLibrary from "@/assets/projects/takoradi-library.png";
+import imgSakomono1 from "@/assets/projects/sakomono-1.jpg";
 
 const typeFilters = ["All Types", "Architecture", "Structural", "Electrical", "Hydro/Water", "Project Management", "Geodetic"];
 const locationFilters = ["All Locations", "Greater Accra", "Upper West", "Ashanti", "Western Region", "Northern Region"];
 
 const allProjects = [
-  { id: "accra-digital-centre", name: "Accra Digital Centre — Front Entrance", loc: "Greater Accra", region: "Greater Accra", cats: ["Architecture"], cat: "Architecture · Commercial", year: "2020", img: imgDigitalFront },
-  { id: "accra-digital-centre-entrance", name: "Accra Digital Centre — Building Entrance", loc: "Greater Accra", region: "Greater Accra", cats: ["Architecture"], cat: "Architecture · Commercial", year: "2020", img: imgDigitalEntrance },
-  { id: "accra-digital-aerial", name: "Accra Digital Centre — Aerial View", loc: "Greater Accra", region: "Greater Accra", cats: ["Architecture"], cat: "Architecture · Commercial", year: "2020", img: imgDigitalAerial },
-  { id: "accra-digital-street", name: "Accra Digital Centre — Street View", loc: "Greater Accra", region: "Greater Accra", cats: ["Architecture"], cat: "Architecture · Commercial", year: "2020", img: imgDigitalStreet },
+  { id: "accra-digital-centre", name: "Accra Digital Centre", loc: "Greater Accra", region: "Greater Accra", cats: ["Architecture"], cat: "Architecture · Commercial", year: "2020", img: imgDigitalFront },
   { id: "ministry-roads", name: "Ministry of Roads & Highways Office Building", loc: "Accra", region: "Greater Accra", cats: ["Architecture"], cat: "Architecture · Public Sector", year: "2017", img: imgMinistryRoads },
-  { id: "umat-main", name: "University of Mines & Technology — Main Block", loc: "Tarkwa, Western Region", region: "Western Region", cats: ["Architecture"], cat: "Architecture · Institutional", year: "2018", img: imgUmat1 },
-  { id: "umat-academic", name: "University of Mines & Technology — Academic Wing", loc: "Tarkwa, Western Region", region: "Western Region", cats: ["Architecture"], cat: "Architecture · Institutional", year: "2018", img: imgUmat2 },
-  { id: "umat-inauguration", name: "University of Mines & Technology — Inauguration", loc: "Tarkwa, Western Region", region: "Western Region", cats: ["Architecture"], cat: "Architecture · Institutional", year: "2018", img: imgUmat3 },
-  { id: "umat-campus", name: "University of Mines & Technology — Campus Overview", loc: "Tarkwa, Western Region", region: "Western Region", cats: ["Architecture"], cat: "Architecture · Institutional", year: "2018", img: imgUmat4 },
-  { id: "umat-full", name: "University of Mines & Technology — Full Campus", loc: "Tarkwa, Western Region", region: "Western Region", cats: ["Architecture"], cat: "Architecture · Institutional", year: "2018", img: imgUmat5 },
+  { id: "umat", name: "University of Mines & Technology", loc: "Tarkwa, Western Region", region: "Western Region", cats: ["Architecture"], cat: "Architecture · Institutional", year: "2018", img: imgUmat1 },
+  { id: "takoradi-tech", name: "Takoradi Technical University", loc: "Takoradi, Western Region", region: "Western Region", cats: ["Architecture"], cat: "Architecture · Institutional", year: "2016", img: imgTakoradiLibrary },
+  { id: "sakomono-flats", name: "Block of Flats at Sakumono", loc: "Sakumono, Greater Accra", region: "Greater Accra", cats: ["Architecture"], cat: "Architecture · Residential", year: "2022", img: imgSakomono1 },
 ];
 
 const Projects = () => {
