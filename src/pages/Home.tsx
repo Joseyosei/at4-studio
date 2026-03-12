@@ -4,6 +4,28 @@ import { useEffect, useRef, useState } from "react";
 
 import imgDigitalFront from "@/assets/projects/accra-digital-centre-front.jpg";
 
+import clientGIA from "@/assets/clients/gia-logo.png";
+import clientADC from "@/assets/clients/accra-digital-centre.png";
+import clientGov from "@/assets/clients/gov-ghana.png";
+import clientMDF from "@/assets/clients/mdf.jpg";
+import clientTullow from "@/assets/clients/tullow-ghana.png";
+import clientTrustLine from "@/assets/clients/trust-f-line.png";
+import clientKTU from "@/assets/clients/koforidua-tech.png";
+import clientATU from "@/assets/clients/accra-tech.png";
+import clientTTU from "@/assets/clients/takoradi-tech.png";
+
+const clients = [
+  { name: "Ghana Institute of Architects", logo: clientGIA },
+  { name: "Accra Digital Centre", logo: clientADC },
+  { name: "Government of Ghana", logo: clientGov },
+  { name: "Minerals Development Fund", logo: clientMDF },
+  { name: "Tullow Oil Ghana", logo: clientTullow },
+  { name: "Trust-F-Line Properties", logo: clientTrustLine },
+  { name: "Koforidua Technical University", logo: clientKTU },
+  { name: "Accra Technical University", logo: clientATU },
+  { name: "Takoradi Technical University", logo: clientTTU },
+];
+
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
