@@ -212,22 +212,27 @@ const Home = () => {
       </section>
 
       {/* CLIENTS */}
-      <section className="py-12 sm:py-16 bg-secondary border-t border-border">
+      <section className="py-12 sm:py-16 bg-background border-t border-border">
         <div className="container mx-auto px-4 sm:px-6">
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="section-label text-center">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="font-display text-3xl sm:text-4xl md:text-5xl font-light text-foreground text-center mb-10 sm:mb-12"
+          >
             Trusted By
-          </motion.p>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-9 items-center gap-6 sm:gap-8 mt-8">
+          </motion.h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
             {clients.map((c, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05, duration: 0.4 }}
-                className="flex items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
+                className="flex items-center justify-center p-6 sm:p-8 rounded-lg border border-border bg-card hover:shadow-md transition-shadow duration-300"
               >
-                <img src={c.logo} alt={c.name} className="max-h-12 sm:max-h-14 w-auto object-contain" />
+                <img src={c.logo} alt={c.name} className="max-h-16 sm:max-h-20 w-auto object-contain" />
               </motion.div>
             ))}
           </div>
