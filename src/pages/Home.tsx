@@ -1,6 +1,57 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import { ChevronDown } from "lucide-react";
+
+const faqs = [
+  {
+    q: "What is Archteam 4 Consultancy (AT4)?",
+    a: "Archteam 4 Consultancy (AT4) is a consortium of professionals, including architects, engineers, planners, socio-economists, and surveyors. Established in 1993, AT4 offers a comprehensive range of consulting services to private, public, and governmental organizations."
+  },
+  {
+    q: "What services does AT4 provide?",
+    a: "AT4 provides a diverse range of consulting services, including architecture, planning, engineering, construction cost estimation, and project management. Our team of experts collaborates under one umbrella to offer integrated solutions to our clients."
+  },
+  {
+    q: "Who are AT4's clients?",
+    a: "AT4 serves a wide array of clients, including private corporations, public organizations, and various ministries in the country. We have extensive experience in working with diverse industries and sectors."
+  },
+  {
+    q: "What makes AT4 stand out in the industry?",
+    a: "AT4 stands out due to our team's vast experience, professionalism, and track record of successfully managing various projects and programs. Our ability to meet deadlines and adapt to the ever-changing business landscape ensures a competitive edge."
+  },
+  {
+    q: "How can I get in touch with AT4 for my project needs?",
+    a: "For inquiries or project collaborations, you can reach out to us through our website on Contact Us Page or contact our office directly. Our team will be more than happy to assist you and discuss your project requirements."
+  },
+];
+
+function FAQItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b border-white/20">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-start justify-between gap-4 py-5 text-left"
+      >
+        <span className="font-body text-[15px] sm:text-[17px] font-semibold text-white flex items-center gap-2">
+          <ChevronDown size={16} className={`flex-shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
+          {question}
+        </span>
+      </button>
+      <motion.div
+        initial={false}
+        animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+        className="overflow-hidden"
+      >
+        <p className="font-body text-[14px] text-white/80 leading-[1.7] pb-5 pl-6">
+          {answer}
+        </p>
+      </motion.div>
+    </div>
+  );
+}
 
 import imgDigitalFront from "@/assets/projects/accra-digital-centre-front.jpg";
 
@@ -235,6 +286,27 @@ const Home = () => {
                 <img src={c.logo} alt={c.name} className="max-h-16 sm:max-h-20 w-auto object-contain" />
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 sm:py-20 md:py-24" style={{ background: "hsl(170, 30%, 45%)" }}>
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-10 md:gap-16 items-start">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.2]"
+            >
+              Frequently Asked<br />Questions
+            </motion.h2>
+            <div>
+              {faqs.map((faq, i) => (
+                <FAQItem key={i} question={faq.q} answer={faq.a} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
