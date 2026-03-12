@@ -290,6 +290,27 @@ const Home = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-16 sm:py-20 md:py-24" style={{ background: "hsl(170, 30%, 45%)" }}>
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-10 md:gap-16 items-start">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.2]"
+            >
+              Frequently Asked<br />Questions
+            </motion.h2>
+            <div>
+              {faqs.map((faq, i) => (
+                <FAQItem key={i} question={faq.q} answer={faq.a} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 sm:py-24 md:py-32 bg-foreground">
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <motion.blockquote
