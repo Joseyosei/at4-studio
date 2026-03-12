@@ -43,12 +43,11 @@ const stats = [
 ];
 
 const projects = [
-  { id: "accra-digital-centre", name: "Accra Digital Centre — Front Entrance", loc: "Greater Accra, Ghana", cat: "Architecture · Commercial", year: "2020" },
-  { id: "accra-digital-centre-entrance", name: "Accra Digital Centre — Building Entrance", loc: "Greater Accra, Ghana", cat: "Architecture · Commercial", year: "2020" },
-  { id: "umat-main", name: "University of Mines & Technology — Main Block", loc: "Tarkwa, Western Region", cat: "Architecture · Institutional", year: "2018" },
-  { id: "wa-municipal", name: "Wa Municipal Council Headquarters", loc: "Wa, Upper West", cat: "Architecture · Public Sector", year: "2015" },
-  { id: "kumasi-warehouse", name: "Kumasi Industrial Warehouse Facility", loc: "Ashanti Region", cat: "Structural Engineering", year: "2019" },
-  { id: "gimpa-extension", name: "Ghana Institute of Management Extension", loc: "Accra", cat: "Architecture · Institutional", year: "2021" },
+  { id: "accra-digital-centre", name: "Accra Digital Centre", loc: "Greater Accra, Ghana", cat: "Architecture · Commercial", year: "2020" },
+  { id: "umat", name: "University of Mines & Technology", loc: "Tarkwa, Western Region", cat: "Architecture · Institutional", year: "2018" },
+  { id: "takoradi-tech", name: "Takoradi Technical University", loc: "Takoradi, Western Region", cat: "Architecture · Institutional", year: "2016" },
+  { id: "sakomono-flats", name: "Block of Flats at Sakumono", loc: "Sakumono, Greater Accra", cat: "Architecture · Residential", year: "2022" },
+  { id: "ministry-roads", name: "Ministry of Roads & Highways Office Building", loc: "Accra, Ghana", cat: "Architecture · Public Sector", year: "2017" },
 ];
 
 const expertiseItems = [
